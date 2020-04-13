@@ -22,22 +22,23 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="巴奇的前端桶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bucky&#39;s f2e bucket">
-<meta property="og:url" content="https://bucky0112.github.io/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E5%BC%8F/index.html">
+  <meta name="description" content="由於踩了不少 JavaScript 的雷，想說需要好好的重新認識一下，於是希望藉由 JavaScript 全攻略：克服 JS 的奇怪部分 這個系列，能夠更增進自己的實力，順便能夠培養寫文章的習慣，那麼就開始吧！Go！Go！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS notice： 語法解析器、詞彙環境、執行環境">
+<meta property="og:url" content="https://bucky0112.github.io/2020/04/01/JSnotice%EF%BC%9A%E8%AA%9E%E6%B3%95%E8%A7%A3%E6%9E%90%E5%99%A8%E3%80%81%E8%A9%9E%E5%BD%99%E7%92%B0%E5%A2%83%E3%80%81%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="巴奇的前端桶">
+<meta property="og:description" content="由於踩了不少 JavaScript 的雷，想說需要好好的重新認識一下，於是希望藉由 JavaScript 全攻略：克服 JS 的奇怪部分 這個系列，能夠更增進自己的實力，順便能夠培養寫文章的習慣，那麼就開始吧！Go！Go！">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/500vRoE.png">
+<meta property="article:published_time" content="2020-03-31T16:16:57.000Z">
+<meta property="article:modified_time" content="2020-04-13T15:31:13.470Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="f2e">
-<meta property="article:tag" content="front end">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="JavaScript 全攻略：克服 JS 的奇怪部分">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/500vRoE.png">
 
-<link rel="canonical" href="https://bucky0112.github.io/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E5%BC%8F/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/04/01/JSnotice%EF%BC%9A%E8%AA%9E%E6%B3%95%E8%A7%A3%E6%9E%90%E5%99%A8%E3%80%81%E8%A9%9E%E5%BD%99%E7%92%B0%E5%A2%83%E3%80%81%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83/">
 
 
 <script id="page-configurations">
@@ -45,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: 匿名函式 | Bucky's f2e bucket</title>
+  <title>JS notice： 語法解析器、詞彙環境、執行環境 | Bucky's f2e bucket</title>
   
 
 
@@ -192,57 +193,127 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">匿名函式
-          <small>標籤</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/01/JSnotice%EF%BC%9A%E8%AA%9E%E6%B3%95%E8%A7%A3%E6%9E%90%E5%99%A8%E3%80%81%E8%A9%9E%E5%BD%99%E7%92%B0%E5%A2%83%E3%80%81%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Bucky Chu">
+      <meta itemprop="description" content="巴奇的前端桶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bucky's f2e bucket">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JS notice： 語法解析器、詞彙環境、執行環境
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-01 00:16:57" itemprop="dateCreated datePublished" datetime="2020-04-01T00:16:57+08:00">2020-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-04-13 23:31:13" itemprop="dateModified" datetime="2020-04-13T23:31:13+08:00">2020-04-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/bucky0112.github.io/categories/JavaScript-%E7%9A%84%E6%80%AA%E5%A5%87%E7%89%A9%E8%AA%9E/" itemprop="url" rel="index"><span itemprop="name">JavaScript 的怪奇物語</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>由於踩了不少 JavaScript 的雷，想說需要好好的重新認識一下，於是希望藉由 <a href="https://www.udemy.com/course/javascriptjs/" target="_blank" rel="noopener">JavaScript 全攻略：克服 JS 的奇怪部分</a> 這個系列，能夠更增進自己的實力，順便能夠培養寫文章的習慣，那麼就開始吧！Go！Go！</p>
+<a id="more"></a>
+
+<h2 id="語法解析器-Syntax-Parsers"><a href="#語法解析器-Syntax-Parsers" class="headerlink" title="語法解析器 (Syntax Parsers)"></a>語法解析器 (Syntax Parsers)</h2><hr>
+<p>首先要先了解當電腦在執行你寫的 code，其實是看不懂你寫的文字是什麼意思，更精確地說是需要透過中間一個媒介去翻譯成電腦看得懂的東西。而這個媒介是是由人寫出來的程式就是語法解析器，又稱為編譯器（Compilers）。</p>
+<p><img src="https://i.imgur.com/500vRoE.png" alt="給電腦執行的其實是被轉換過，讓電腦看得懂要做什麼。"></p>
+<p><strong>那麼編譯器是怎麼運作的呢？</strong></p>
+<p>當你輸入一段文字，例如： console.log(‘Hello’)，編譯器會一個字一個字地讀，當讀完整個詞時，得到關鍵字 <code>console.log(&#39;Hello&#39;)</code>，就會轉換給電腦看得懂的指令。</p>
+<h2 id="詞彙環境-Lexical-Environments"><a href="#詞彙環境-Lexical-Environments" class="headerlink" title="詞彙環境 (Lexical Environments)"></a>詞彙環境 (Lexical Environments)</h2><hr>
+<blockquote>
+<p>程式碼在程式中實際所在的位置</p>
+</blockquote>
+<p>詞彙環境在於一些程式語言中，認為程式碼寫在哪裡是很重要的。（不是每個程式語言都這樣）因為它幫助語法解析器看你寫的程式碼，它的語法、它的單字做決定，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function greeting () &#123;</span><br><span class="line">    var a &#x3D; &#39;hello world&#39;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以語法解析器讀到 <code>var a = &#39;hello world&#39;</code> ，它就會了解說，這一段的位置是在 <code>greeting()</code> 這個 function 裡面。</p>
+<h2 id="執行環境-Execution-Contexts"><a href="#執行環境-Execution-Contexts" class="headerlink" title="執行環境 (Execution Contexts)"></a>執行環境 (Execution Contexts)</h2><hr>
+<p>一般在執行程式的時候，會有許多的詞彙環境，而執行環境會去管理哪一個要執行。</p>
+<h2 id="資料來源"><a href="#資料來源" class="headerlink" title="資料來源"></a>資料來源</h2><hr>
+<p><a href="https://www.guru99.com/syntax-analysis-parsing-types.html" target="_blank" rel="noopener">圖片來源</a><br><a href="https://www.udemy.com/course/javascriptjs/" target="_blank" rel="noopener">JavaScript 全攻略：克服 JS 的奇怪部分</a></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-11T11:29:52+08:00"
-              content="2020-04-11">
-          04-11
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/bucky0112.github.io/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/bucky0112.github.io/tags/%E8%AA%9E%E6%B3%95%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag"># 語法解析器</a>
+              <a href="/bucky0112.github.io/tags/%E8%A9%9E%E5%BD%99%E7%92%B0%E5%A2%83/" rel="tag"># 詞彙環境</a>
+              <a href="/bucky0112.github.io/tags/%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83/" rel="tag"># 執行環境</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/bucky0112.github.io/2020/04/11/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-function/" itemprop="url">
-            <span itemprop="name">JS基礎回顧 - function</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/03/30/%E5%9F%BA%E7%A4%8EVue-js-3/" rel="prev" title="基礎 Vue.js(下)">
+      <i class="fa fa-chevron-left"></i> 基礎 Vue.js(下)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/04/03/%E5%85%88%E5%88%A5%E6%80%A5%E8%91%97%E5%AF%ABleetcode%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" rel="next" title="Think first, code later">
+      Think first, code later <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -289,6 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#語法解析器-Syntax-Parsers"><span class="nav-number">1.</span> <span class="nav-text">語法解析器 (Syntax Parsers)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#詞彙環境-Lexical-Environments"><span class="nav-number">2.</span> <span class="nav-text">詞彙環境 (Lexical Environments)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#執行環境-Execution-Contexts"><span class="nav-number">3.</span> <span class="nav-text">執行環境 (Execution Contexts)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#資料來源"><span class="nav-number">4.</span> <span class="nav-text">資料來源</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -490,6 +562,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e95717eda69cbcfa80fd',
+      clientSecret: '62a118b359bfe09dc88016d1db7240dff35dbd59',
+      repo        : 'bucky0112.github.io',
+      owner       : 'bucky0112',
+      admin       : ['bucky0112'],
+      id          : '09364b55a141865d5ea703c993f0e6f1',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
