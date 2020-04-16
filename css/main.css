@@ -1312,7 +1312,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #bff;
+  background: #8c6e83;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2591,12 +2591,13 @@ hr {
   padding: 1px 4px;
   text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
 }
-.posts-expand.index .post-title,
+.posts-expand.index .post-title {
+  text-align: center;
+}
 .posts-expand.index .post-meta {
   text-align: left;
 }
 @media (max-width: 767px) {
-  .posts-expand.index .post-title,
   .posts-expand.index .post-meta {
     text-align: center;
   }
