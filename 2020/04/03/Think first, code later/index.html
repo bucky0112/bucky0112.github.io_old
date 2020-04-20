@@ -23,25 +23,22 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="在看 kuro 大神寫的 0 陷阱！0 誤解！8 天重新認識 JavaScript！（不是業配，這本書很棒）中提到，JavaScript 最核心也最容易被誤用的部份非函式（function）莫屬。我一開始在學 JS 時，碰到函式就覺得非常挫折，因此目前在整理這個筆記時，希望以後可以不用再踩坑？">
+  <meta name="description" content="以前看過一篇文章，是用拉麵店販賣機講解關於 api 的概念，我覺得作者很厲害，可以用淺顯易懂的方式讓當時還是前端麻瓜的我看得懂，那篇文章很推薦新手去看 -&gt; 從拉麵店的販賣機理解什麼是 API 最近作者開了一系列的課 -&gt; 先別急著寫 leetcode。因為我不是本科系出身，所以確實在解題時很容易遇上困難，不然就是會想很久。剛好看到這個課程就覺得蠻需要培養如何寫程式的思維，而且重點是免">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS基礎回顧 - function">
-<meta property="og:url" content="https://bucky0112.github.io/2020/04/11/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-function/index.html">
+<meta property="og:title" content="Think first, code later">
+<meta property="og:url" content="https://bucky0112.github.io/2020/04/03/Think%20first,%20code%20later/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="在看 kuro 大神寫的 0 陷阱！0 誤解！8 天重新認識 JavaScript！（不是業配，這本書很棒）中提到，JavaScript 最核心也最容易被誤用的部份非函式（function）莫屬。我一開始在學 JS 時，碰到函式就覺得非常挫折，因此目前在整理這個筆記時，希望以後可以不用再踩坑？">
+<meta property="og:description" content="以前看過一篇文章，是用拉麵店販賣機講解關於 api 的概念，我覺得作者很厲害，可以用淺顯易懂的方式讓當時還是前端麻瓜的我看得懂，那篇文章很推薦新手去看 -&gt; 從拉麵店的販賣機理解什麼是 API 最近作者開了一系列的課 -&gt; 先別急著寫 leetcode。因為我不是本科系出身，所以確實在解題時很容易遇上困難，不然就是會想很久。剛好看到這個課程就覺得蠻需要培養如何寫程式的思維，而且重點是免">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/HRVJOZV.png">
-<meta property="article:published_time" content="2020-04-11T03:29:52.000Z">
-<meta property="article:modified_time" content="2020-04-18T07:50:18.707Z">
+<meta property="article:published_time" content="2020-04-03T14:45:39.000Z">
+<meta property="article:modified_time" content="2020-04-18T16:26:39.892Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="function">
-<meta property="article:tag" content="函式宣告">
-<meta property="article:tag" content="匿名函式">
-<meta property="article:tag" content="回傳值">
+<meta property="article:tag" content="先別急著寫 leetcode">
+<meta property="article:tag" content="pseudo code">
+<meta property="article:tag" content="如何印出 1-100 的偶數">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/HRVJOZV.png">
 
-<link rel="canonical" href="https://bucky0112.github.io/2020/04/11/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-function/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/04/03/Think%20first,%20code%20later/">
 
 
 <script id="page-configurations">
@@ -54,7 +51,7 @@
   };
 </script>
 
-  <title>JS基礎回顧 - function | Bucky's f2e bucket</title>
+  <title>Think first, code later | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -212,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/11/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-function/">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/03/Think%20first,%20code%20later/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
@@ -225,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JS基礎回顧 - function
+          Think first, code later
         </h1>
 
         <div class="post-meta">
@@ -235,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-04-11 11:29:52" itemprop="dateCreated datePublished" datetime="2020-04-11T11:29:52+08:00">2020-04-11</time>
+              <time title="創建時間：2020-04-03 22:45:39" itemprop="dateCreated datePublished" datetime="2020-04-03T22:45:39+08:00">2020-04-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-18 15:50:18" itemprop="dateModified" datetime="2020-04-18T15:50:18+08:00">2020-04-18</time>
+                <time title="修改時間：2020-04-19 00:26:39" itemprop="dateModified" datetime="2020-04-19T00:26:39+08:00">2020-04-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +247,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/bucky0112.github.io/categories/JS-%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7/" itemprop="url" rel="index"><span itemprop="name">JS 基礎回顧</span></a>
+                  <a href="/bucky0112.github.io/categories/%E5%85%88%E5%88%A5%E6%80%A5%E8%91%97%E5%AF%AB-leetcode-%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">先別急著寫 leetcode 課程心得</span></a>
                 </span>
             </span>
 
@@ -265,55 +262,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在看 kuro 大神寫的 <a href="https://www.tenlong.com.tw/products/9789864344130" target="_blank" rel="noopener">0 陷阱！0 誤解！8 天重新認識 JavaScript！</a>（不是業配，這本書很棒）中提到，JavaScript 最核心也最容易被誤用的部份非函式（function）莫屬。我一開始在學 JS 時，碰到函式就覺得非常挫折，因此目前在整理這個筆記時，希望以後可以不用再踩坑？</p>
+        <p>以前看過一篇文章，是用拉麵店販賣機講解關於 api 的概念，我覺得作者很厲害，可以用淺顯易懂的方式讓當時還是前端麻瓜的我看得懂，那篇文章很推薦新手去看 -&gt; <a href="https://medium.com/@hulitw/ramen-and-api-6238437dc544" target="_blank" rel="noopener">從拉麵店的販賣機理解什麼是 API</a></p>
+<p>最近作者開了一系列的課 -&gt; <a href="https://lidemy.com/p/alg101-leetcode" target="_blank" rel="noopener">先別急著寫 leetcode</a>。因為我不是本科系出身，所以確實在解題時很容易遇上困難，不然就是會想很久。剛好看到這個課程就覺得蠻需要培養如何寫程式的思維，而且重點是免費喔！免費喔！免費喔！（很重要要說 3 次）所以這個系列會記載一些對我有幫助的筆記，希望能讓自己更進步一些。</p>
 <a id="more"></a>
 
-<h2 id="函式宣告"><a href="#函式宣告" class="headerlink" title="函式宣告"></a>函式宣告</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sayhello() &#123;</span><br><span class="line">  console.log (&#39;hi&#39;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayhello()  &#x2F;&#x2F; 印出&#39;hi&#39;</span><br></pre></td></tr></table></figure>
-
-<p>如上面的例子可以看到，函式的宣告及呼叫的運作。</p>
-<p><img src="https://i.imgur.com/HRVJOZV.png" alt="Image"></p>
-<p>一個宣告函式主要會包含三個部份：</p>
-<ul>
-<li>函式的名稱（或是可能沒有名稱）。</li>
-<li>小括號 () 中的部份是參數，可以帶入無限個。</li>
-<li>大括號 {} 中的部份，是主要區塊，放重複執行的內容。</li>
+<h2 id="會寫程式的人與初學者差別在哪？"><a href="#會寫程式的人與初學者差別在哪？" class="headerlink" title="會寫程式的人與初學者差別在哪？"></a>會寫程式的人與初學者差別在哪？</h2><hr>
+<h3 id="會寫程式的人"><a href="#會寫程式的人" class="headerlink" title="會寫程式的人"></a>會寫程式的人</h3><ol>
+<li>先想解法</li>
+<li>如果是有做過或是簡單的，就會直接構思出方法</li>
+<li>如果比較困難或是複雜的問題，就把解法轉換成程式碼</li>
+</ol>
+<h3 id="初學者"><a href="#初學者" class="headerlink" title="初學者"></a>初學者</h3><ul>
+<li>邊寫邊想怎麼解</li>
+<li>試著套用自己以前學過的語法</li>
 </ul>
-<p>再看一個帶入參數的例子，如果想要得到正方形的面積的話，公式是邊長 x 邊長，所以在 function 中可以這樣寫：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getSquareArea (side) &#123;</span><br><span class="line">  var answer &#x3D; side * side</span><br><span class="line">  console.log(answer)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getSquareArea(50)  &#x2F;&#x2F; 引數帶入數值 50，答案得到 2500</span><br></pre></td></tr></table></figure>
+<p>這個我自己蠻有感覺的，確實一開始會邊寫邊想，然後如果卡住了，就翻筆記看有什麼語法可以拿來套用，不過通常都沒什麼好下場就是了，哈。</p>
+<h2 id="在解題會有兩種情況"><a href="#在解題會有兩種情況" class="headerlink" title="在解題會有兩種情況"></a>在解題會有兩種情況</h2><hr>
+<h3 id="看題目覺得自己解得開"><a href="#看題目覺得自己解得開" class="headerlink" title="看題目覺得自己解得開"></a>看題目覺得自己解得開</h3><ul>
+<li>有效率的解開</li>
+<li>有解開但是時間花較久</li>
+<li>最後解不開</li>
+</ul>
+<h3 id="看題目就覺得看不懂"><a href="#看題目就覺得看不懂" class="headerlink" title="看題目就覺得看不懂"></a>看題目就覺得看不懂</h3><p>撇開第二種看不懂的情況，在看得懂的情形下，以我自己比較常遇到解不開的狀況是，一開始覺得應該可以怎麼做，可是最後不知道怎麼將想法轉換成程式碼，而講者推薦了一些做法。</p>
+<h2 id="推薦初學者寫程式的作法"><a href="#推薦初學者寫程式的作法" class="headerlink" title="推薦初學者寫程式的作法"></a>推薦初學者寫程式的作法</h2><hr>
+<p>首先看一道題目，然後按照以下的作法，題目是：</p>
+<p>如何印出 1-100 之間的偶數？</p>
+<h3 id="想一下解法，不寫任何程式碼"><a href="#想一下解法，不寫任何程式碼" class="headerlink" title="想一下解法，不寫任何程式碼"></a>想一下解法，不寫任何程式碼</h3><p>先不要急著想寫 code，想如何一步一步解決的方法。</p>
+<ol>
+<li>如何印出 1-100</li>
+<li>如何判斷偶數</li>
+</ol>
+<h3 id="把解法寫成-pseudo-code"><a href="#把解法寫成-pseudo-code" class="headerlink" title="把解法寫成 pseudo code"></a>把解法寫成 pseudo code</h3><p>虛擬碼（pseudo code）在維基百科的解釋： </p>
+<blockquote>
+<p>更類似自然語言。它是半形式化、不標準的語言。我們可以將整個演算法執行過程的結構用接近自然語言的形式（這裡可以使用任何一種作者熟悉的文字，例如中文、英文，重點是將程式的意思表達出來）描述出來。使用虛擬碼，可以幫助我們更好的表述演算法，不用拘泥於具體的實現。</p>
+</blockquote>
+<p>主要是讓自己看得懂的方法，首先要讓如何印出 1-100：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">讓 i &#x3D; 1</span><br><span class="line">如果 i &gt; 100，結束</span><br><span class="line">印出 i</span><br><span class="line">讓 i 可以一直累加</span><br><span class="line">然後再跳回第 2 步</span><br></pre></td></tr></table></figure>
 
-<p>當呼叫一個需要帶入資料的函式，像上面的例子，在函式名稱後的小括號 () 傳入使用的值，可以是變數或是數值，稱為<strong>引數</strong>。</p>
-<h3 id="回傳值"><a href="#回傳值" class="headerlink" title="回傳值"></a>回傳值</h3><hr>
-<p>在建立 function，如果希望透過呼叫後可以得到回應結果，可以透過 return 來取得回傳值，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function isPass (score) &#123;</span><br><span class="line">  return (score &gt;&#x3D; 60)     &#x2F;&#x2F; 回傳是不是 60 分</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var myTest &#x3D; 59;          </span><br><span class="line"></span><br><span class="line">if (isPass(myTest)) &#123;      </span><br><span class="line">  console.log(&#39;及格&#39;)      &#x2F;&#x2F; 如果就印出及格</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  console.log(&#39;不及格&#39;)    &#x2F;&#x2F; 如果不是就印出不及格，最後結果是不及格</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然後題目是要印出偶數，所以把第 3 步改成判斷式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">讓 i &#x3D; 1</span><br><span class="line">如果 i &gt; 100，結束</span><br><span class="line">如果 i 是偶數，印出 i</span><br><span class="line">讓 i 可以一直累加</span><br><span class="line">然後再跳回第 2 步</span><br></pre></td></tr></table></figure>
 
-<p>再看一個例子，試著計算三角形的面積，公式是底 x 高 / 2，這次引數以變數方式帶入，所以可以這樣寫：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getTriangleArea (base, height) &#123;</span><br><span class="line">  return base * height * 0.5</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 用變數帶入底10，高20</span><br><span class="line">var b &#x3D; 10;</span><br><span class="line">var h &#x3D; 20</span><br><span class="line">console.log(getTriangleArea (b, h)) &#x2F;&#x2F; 得到答案 100</span><br></pre></td></tr></table></figure>
+<p>雖然 pseudo code 沒有一定的形式，但是可以練習寫成比較像是程式碼的 pseudo code：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let i &#x3D; 1</span><br><span class="line">if i &gt; 100 then exit</span><br><span class="line">if i % 2 &#x3D;&#x3D;&#x3D; 0, print i</span><br><span class="line">i &#x3D; i + 1</span><br><span class="line">jump to line 2</span><br></pre></td></tr></table></figure>
 
-<p>還可以重複使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var area1 &#x3D; getTriangleArea (50, 60);</span><br><span class="line">var area2 &#x3D; getTriangleArea (90, 200);</span><br><span class="line"></span><br><span class="line">console.log(area1); &#x2F;&#x2F; 得到答案 1500</span><br><span class="line">console.log(area2)  &#x2F;&#x2F; 得到答案 9000</span><br></pre></td></tr></table></figure>
+<p>寫到這邊還可以進一步寫成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (i from 1 to 100) do</span><br><span class="line">	if (i % 2 &#x3D;&#x3D;&#x3D; 0)</span><br><span class="line">	print i</span><br><span class="line">end for</span><br></pre></td></tr></table></figure>
 
-<h2 id="匿名函式"><a href="#匿名函式" class="headerlink" title="匿名函式"></a>匿名函式</h2><hr>
-<p>在上一個函式中的寫法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function isPass (score) &#123;</span><br><span class="line">  return (score &gt;&#x3D; 60)   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>而在另一種的寫法，透過<code>變數名稱 = function ([參數] {...})</code>,將一個函式透過 = 指定給某個變數：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; function 後面沒有名稱</span><br><span class="line">var isPass &#x3D; function (score) &#123;</span><br><span class="line">  return (score &gt;&#x3D; 60)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>因為在變數型別中，除了基本型別以外的都是<strong>物件型別</strong>，所以可以被呼叫，自然也可以透過變數存入。</p>
-<p>也由於在這個例子中，function 後面沒有名稱，所以是<strong>匿名函式</strong>。</p>
-<p>如果要替它加上名稱也是可以，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var isPass &#x3D; function func(score) &#123;</span><br><span class="line">  return (score &gt;&#x3D; 60)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>但是要注意的是，這個 func 只在<strong>自己函式範圍</strong>有效，看以下的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var isPass &#x3D; function func (score) &#123;</span><br><span class="line">  console.log(typeof func);  &#x2F;&#x2F; 使用 typeof 可以判斷型別</span><br><span class="line">  return (score &gt;&#x3D; 60)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(typeof func);</span><br></pre></td></tr></table></figure>
-
-<p>上面的結果，第一個 typeof 判斷是 function，第二個則是出現 undefined，func 一旦不在自己函式範圍內，就不存在了。</p>
-<p>不過如果想要取得這個 function 的名稱，也可以透過自定義的變數名稱，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var isPass &#x3D; function func (score) &#123;</span><br><span class="line">  console.log(typeof isPass);</span><br><span class="line">  return (score &gt;&#x3D; 60)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(typeof isPass)</span><br></pre></td></tr></table></figure>
-
-<p>2 個 console.log 結果都會顯示 function。</p>
-
+<h3 id="把-pseudo-code-翻譯成程式碼"><a href="#把-pseudo-code-翻譯成程式碼" class="headerlink" title="把 pseudo code 翻譯成程式碼"></a>把 pseudo code 翻譯成程式碼</h3><p>到了這個步驟，如果有學過程式的話，應該就可以把程式碼寫出來，這邊使用 JavaScript 來寫，就可以印出從 1-100 的偶數：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for ( let i &#x3D; 1; i &lt; 100; i ++) &#123;</span><br><span class="line">	if(i % 2 &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">		console.log(i)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -322,8 +318,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/bucky0112.github.io/tags/function/" rel="tag"># function</a>
-              <a href="/bucky0112.github.io/tags/%E5%8C%BF%E5%90%8D%E5%87%BD%E5%BC%8F/" rel="tag"># 匿名函式</a>
+              <a href="/bucky0112.github.io/tags/%E5%85%88%E5%88%A5%E6%80%A5%E8%91%97%E5%AF%AB-leetcode/" rel="tag"># 先別急著寫 leetcode</a>
+              <a href="/bucky0112.github.io/tags/pseudo-code/" rel="tag"># pseudo code</a>
           </div>
 
         
@@ -332,12 +328,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/10/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-%E8%AE%8A%E6%95%B8%E8%88%87%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B/" rel="prev" title="JS 基礎回顧 - 變數與資料型別">
-      <i class="fa fa-chevron-left"></i> JS 基礎回顧 - 變數與資料型別
+    <a href="/bucky0112.github.io/2020/04/01/JSnotice%EF%BC%9A%E8%AA%9E%E6%B3%95%E8%A7%A3%E6%9E%90%E5%99%A8%E3%80%81%E8%A9%9E%E5%BD%99%E7%92%B0%E5%A2%83%E3%80%81%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83/" rel="prev" title="JS notice： 語法解析器、詞彙環境、執行環境">
+      <i class="fa fa-chevron-left"></i> JS notice： 語法解析器、詞彙環境、執行環境
     </a></div>
       <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/13/JSnotice%EF%BC%9A%E5%80%BC%E9%85%8D%E5%B0%8D%E8%88%87%E7%89%A9%E4%BB%B6/" rel="next" title="JS notice： 名稱/值配對與物件">
-      JS notice： 名稱/值配對與物件 <i class="fa fa-chevron-right"></i>
+    <a href="/bucky0112.github.io/2020/04/10/JS%E5%9F%BA%E7%A4%8E%E5%9B%9E%E9%A1%A7-%E8%AE%8A%E6%95%B8%E8%88%87%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B/" rel="next" title="JS 基礎回顧 - 變數與資料型別">
+      JS 基礎回顧 - 變數與資料型別 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -398,7 +394,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#函式宣告"><span class="nav-number">1.</span> <span class="nav-text">函式宣告</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#回傳值"><span class="nav-number">1.1.</span> <span class="nav-text">回傳值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名函式"><span class="nav-number">2.</span> <span class="nav-text">匿名函式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#會寫程式的人與初學者差別在哪？"><span class="nav-number">1.</span> <span class="nav-text">會寫程式的人與初學者差別在哪？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#會寫程式的人"><span class="nav-number">1.1.</span> <span class="nav-text">會寫程式的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初學者"><span class="nav-number">1.2.</span> <span class="nav-text">初學者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在解題會有兩種情況"><span class="nav-number">2.</span> <span class="nav-text">在解題會有兩種情況</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#看題目覺得自己解得開"><span class="nav-number">2.1.</span> <span class="nav-text">看題目覺得自己解得開</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看題目就覺得看不懂"><span class="nav-number">2.2.</span> <span class="nav-text">看題目就覺得看不懂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推薦初學者寫程式的作法"><span class="nav-number">3.</span> <span class="nav-text">推薦初學者寫程式的作法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#想一下解法，不寫任何程式碼"><span class="nav-number">3.1.</span> <span class="nav-text">想一下解法，不寫任何程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把解法寫成-pseudo-code"><span class="nav-number">3.2.</span> <span class="nav-text">把解法寫成 pseudo code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把-pseudo-code-翻譯成程式碼"><span class="nav-number">3.3.</span> <span class="nav-text">把 pseudo code 翻譯成程式碼</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -611,7 +607,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'bucky0112.github.io',
       owner       : 'bucky0112',
       admin       : ['bucky0112'],
-      id          : 'd0f6ccfbde25d4171066b5dd957eb5c1',
+      id          : '0c19cbade187118960a8c71b016375e2',
         language: 'zh-TW',
       distractionFreeMode: true
     });
