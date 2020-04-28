@@ -23,24 +23,22 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="在上一篇的 Think first, code later 中，有提到如何一步一步地解開印出 1-100 的偶數，這一篇則是來看看如何解一些題目，像是印出 1-100 的奇數、fizz buzz 跟找出最小值。">
+  <meta name="description" content="在 JavaScript 中，提升（Hoisting）可能是最奇怪的部份了，這個部份還滿容易搞混的，不過希望我整理出來的筆記能夠幫助釐清觀念，如果有錯的部分麻煩請告知我。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="練習如何解題">
-<meta property="og:url" content="https://bucky0112.github.io/2020/04/18/%E7%B7%B4%E7%BF%92%E5%A6%82%E4%BD%95%E8%A7%A3%E9%A1%8C/index.html">
+<meta property="og:title" content="執行環境：創造與提升">
+<meta property="og:url" content="https://bucky0112.github.io/2020/04/21/%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83-%E5%89%B5%E9%80%A0%E8%88%87%E6%8F%90%E5%8D%87/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="在上一篇的 Think first, code later 中，有提到如何一步一步地解開印出 1-100 的偶數，這一篇則是來看看如何解一些題目，像是印出 1-100 的奇數、fizz buzz 跟找出最小值。">
+<meta property="og:description" content="在 JavaScript 中，提升（Hoisting）可能是最奇怪的部份了，這個部份還滿容易搞混的，不過希望我整理出來的筆記能夠幫助釐清觀念，如果有錯的部分麻煩請告知我。">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-04-18T08:00:01.000Z">
-<meta property="article:modified_time" content="2020-04-20T15:14:08.367Z">
+<meta property="article:published_time" content="2020-04-21T09:21:59.793Z">
+<meta property="article:modified_time" content="2020-04-28T16:25:05.368Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="先別急著寫 leetcode">
-<meta property="article:tag" content="pseudo code">
-<meta property="article:tag" content="印出 1-100 的奇數">
-<meta property="article:tag" content="fizz buzz">
-<meta property="article:tag" content="找最小值">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="JavaScript 全攻略：克服 JS 的奇怪部分">
+<meta property="article:tag" content="hoisting">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bucky0112.github.io/2020/04/18/%E7%B7%B4%E7%BF%92%E5%A6%82%E4%BD%95%E8%A7%A3%E9%A1%8C/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/04/21/%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83-%E5%89%B5%E9%80%A0%E8%88%87%E6%8F%90%E5%8D%87/">
 
 
 <script id="page-configurations">
@@ -53,7 +51,7 @@
   };
 </script>
 
-  <title>練習如何解題 | Bucky's f2e bucket</title>
+  <title>執行環境：創造與提升 | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -211,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/18/%E7%B7%B4%E7%BF%92%E5%A6%82%E4%BD%95%E8%A7%A3%E9%A1%8C/">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/21/%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83-%E5%89%B5%E9%80%A0%E8%88%87%E6%8F%90%E5%8D%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
@@ -224,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          練習如何解題
+          執行環境：創造與提升
         </h1>
 
         <div class="post-meta">
@@ -234,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-04-18 16:00:01" itemprop="dateCreated datePublished" datetime="2020-04-18T16:00:01+08:00">2020-04-18</time>
+              <time title="創建時間：2020-04-21 17:21:59" itemprop="dateCreated datePublished" datetime="2020-04-21T17:21:59+08:00">2020-04-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-20 23:14:08" itemprop="dateModified" datetime="2020-04-20T23:14:08+08:00">2020-04-20</time>
+                <time title="修改時間：2020-04-29 00:25:05" itemprop="dateModified" datetime="2020-04-29T00:25:05+08:00">2020-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +247,7 @@
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/bucky0112.github.io/categories/%E5%85%88%E5%88%A5%E6%80%A5%E8%91%97%E5%AF%AB-leetcode-%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">先別急著寫 leetcode 課程心得</span></a>
+                  <a href="/bucky0112.github.io/categories/JavaScript-%E7%9A%84%E6%80%AA%E5%A5%87%E7%89%A9%E8%AA%9E/" itemprop="url" rel="index"><span itemprop="name">JavaScript 的怪奇物語</span></a>
                 </span>
             </span>
 
@@ -264,36 +262,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在上一篇的 <a href="https://bucky0112.github.io/bucky0112.github.io/2020/04/03/%E5%85%88%E5%88%A5%E6%80%A5%E8%91%97%E5%AF%ABleetcode%E8%AA%B2%E7%A8%8B%E5%BF%83%E5%BE%97/">Think first, code later</a> 中，有提到如何一步一步地解開印出 1-100 的偶數，這一篇則是來看看如何解一些題目，像是印出 1-100 的奇數、fizz buzz 跟找出最小值。</p>
+        <p>在 JavaScript 中，提升（Hoisting）可能是最奇怪的部份了，這個部份還滿容易搞混的，不過希望我整理出來的筆記能夠幫助釐清觀念，如果有錯的部分麻煩請告知我。</p>
 <a id="more"></a>
 
-<h2 id="印出-1-100-的奇數"><a href="#印出-1-100-的奇數" class="headerlink" title="印出 1-100 的奇數"></a>印出 1-100 的奇數</h2><hr>
-<p>首先先想出步驟：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">設定 i &#x3D; 1</span><br><span class="line">如果 i &gt; 100 就結束</span><br><span class="line">如果 i 是奇數就印出 i</span><br><span class="line">讓 i 累加</span><br><span class="line">再跳回第 2 步</span><br></pre></td></tr></table></figure>
+<p>首先看一段程式碼，然後看會發生什麼事：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#39;Hello World&#39;;</span><br><span class="line"></span><br><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line">b()</span><br></pre></td></tr></table></figure>
 
-<p>大概設定步驟後，就可以寫出 pseudo code：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let i &#x3D; 1</span><br><span class="line">i &gt; 100 end</span><br><span class="line">i % 2 &#x3D;&#x3D;&#x3D; 1</span><br><span class="line">i ++</span><br><span class="line">jump to line 2</span><br></pre></td></tr></table></figure>
+<p>上面的程式碼沒有意外的出現 <code>Hello World</code> 及 <code>Test</code>。<br>如果把第 8 跟第 9 行移到最上面的話，會發生什麼事呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(a); &#x2F;&#x2F; undefined</span><br><span class="line">b();            &#x2F;&#x2F; &quot;Test&quot;</span><br><span class="line"></span><br><span class="line">var a &#x3D; &#39;Hello World&#39;;</span><br><span class="line"></span><br><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>寫到這邊就大概知道可以使用 for 迴圈去跑了，所以可以寫成：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for (let i &#x3D; 1; i &lt; 100; i++ ) &#123;</span><br><span class="line">  if (i % 2 &#x3D;&#x3D;&#x3D;1) &#123;</span><br><span class="line">    console.log(i)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>結果沒有出現錯誤，而是得到一個值 undefined，另一個函式則是成功執行。<br>這在其他大部分程式語言是沒有辦法執行的，但是在 JavaScript 卻可以執行（至少我在 Ruby 試過不行），<br>而這個現象叫做提升 (Hoisting)。</p>
+<p>這個現象並不是說真的把你的程式碼移到最上面，而是在一行一行執行程式碼之前，JavaScript 會先做一次預編譯，為了變數和函式在記憶體中建立一個空間，所以當程式碼被逐行執行時，就可以馬上找到它們。</p>
+<p>那麼為什麼變數跟函式得到的結果不同呢？</p>
+<p>這是因為所有 JavaScript 的變數，<strong>在一開始都會被設定為 undefined</strong>，表示不知道它的值，就算不設值的話，也是一樣得到 undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(a); &#x2F;&#x2F; undefined</span><br><span class="line">b();            &#x2F;&#x2F; &quot;Test&quot;</span><br><span class="line"></span><br><span class="line">var a;</span><br><span class="line"></span><br><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Fizz-buzz"><a href="#Fizz-buzz" class="headerlink" title="Fizz buzz"></a>Fizz buzz</h2><hr>
-<p>記得這題在 leetcode 有看過，那時候還不是很懂如何思考（雖然現在也沒有很強就是了），不過現在可以來試試看如何解出這一題，首先先了解一下規則。</p>
-<p>Fizz buzz 的規則是，數字從 1-n，如果碰到 3 的倍數，就印出 Fizz；如果碰到 5 的倍數，就印出 Buzz；如果碰到 3 跟 5 的倍數，就印出 Fizz Buzz。</p>
-<p>知道規則後，就可以想想怎麼做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">設定 i &#x3D; 1</span><br><span class="line">一直算到 n 就結束</span><br><span class="line">如果是 3 的倍數，印 Fizz</span><br><span class="line">如果是 5 的倍數，印 Buzz</span><br><span class="line">如果是 3 跟 5 的倍數，印 Fizz Buzz</span><br><span class="line">讓 i 累加</span><br><span class="line">跳回第 2 步</span><br></pre></td></tr></table></figure>
+<p>而在程式碼在第一行發現 a 沒有值，就直接給 undefined。</p>
+<p>函式不同的是，前面有說到，執行前會做一次預編譯，在這過程中，定義式函式會優先執行，會被完全設定好放在記憶體中，等到執行時發現這裏有一個函式，在記憶體已經有值了，於是可以馬上讀取。</p>
+<p>雖然 JavaScript 有提升這個特性，但是還是建議要用到的變數，還是盡可能地在上面宣告再使用。</p>
 
-<p>到這邊就可以用 function 包一個 for 迴圈寫出來，看數字要多少再帶入就可以：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function fizzBuzz (num) &#123;</span><br><span class="line">  for (let i &#x3D;1; i &lt;&#x3D; num; i++) &#123;</span><br><span class="line">    if(i % 15 &#x3D;&#x3D;&#x3D;0) &#123;            &#x2F;&#x2F; 15 的倍數就印 Fizz Buzz</span><br><span class="line">      console.log(&#39;Fizz Buzz&#39;)</span><br><span class="line">    &#125; else if (i % 3 &#x3D;&#x3D;&#x3D;0) &#123;    &#x2F;&#x2F; 3 的倍數就印 Fizz</span><br><span class="line">      console.log(&#39;Fizz&#39;)</span><br><span class="line">    &#125; else if (i % 5 &#x3D;&#x3D;&#x3D;0) &#123;    &#x2F;&#x2F; 5 的倍數就印 Buzz</span><br><span class="line">      console.log(&#39;Buzz&#39;)</span><br><span class="line">    &#125; else &#123;                    &#x2F;&#x2F; 其他數就照樣印出數字</span><br><span class="line">      console.log(i)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fizzBuzz(100)                  &#x2F;&#x2F; 代入 100，就從 1 比對到 100</span><br></pre></td></tr></table></figure>
-
-<h2 id="找最小值"><a href="#找最小值" class="headerlink" title="找最小值"></a>找最小值</h2><hr>
-<p>找最小值的方法可以從情境去帶入比較好思考。</p>
-<p>例如目前有一副牌，從第一張開始設定為最小的牌，再來每一次的翻牌跟目前最小的牌做比較，直到全部翻完就可以知道最小的牌是哪一張。</p>
-<p>所以 pseudo code 大概是這樣：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let min &#x3D; [0];</span><br><span class="line">for (i form 1 to n) do</span><br><span class="line">  翻開第 i 張牌</span><br><span class="line">  if (第 i 張牌比最小牌還要小)</span><br><span class="line">    最小的牌 &#x3D; 第 i 張牌</span><br><span class="line">  end if</span><br><span class="line">end for</span><br></pre></td></tr></table></figure>
-
-<p>接著就可以用 JavaScript 寫出 code：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let num &#x3D; [11, 10, 8, 3, 2, 6];          &#x2F;&#x2F; 目前的牌組</span><br><span class="line">let min &#x3D; num[0];                       &#x2F;&#x2F; 設定最小牌為第一張</span><br><span class="line"></span><br><span class="line">for (let i &#x3D; 0; i &lt; num.length; i ++) &#123;</span><br><span class="line">  if (num[i] &lt; min) &#123;                   &#x2F;&#x2F; 如果目前翻到的牌 &lt; min，</span><br><span class="line">    min &#x3D; num[i]                        &#x2F;&#x2F; min就是目前最小牌</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(min)                        &#x2F;&#x2F; 最小值就是 2</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -302,9 +289,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/bucky0112.github.io/tags/%E5%8D%B0%E5%87%BA-1-100-%E7%9A%84%E5%A5%87%E6%95%B8/" rel="tag"># 印出 1-100 的奇數</a>
-              <a href="/bucky0112.github.io/tags/fizz-buzz/" rel="tag"># fizz buzz</a>
-              <a href="/bucky0112.github.io/tags/%E6%89%BE%E6%9C%80%E5%B0%8F%E5%80%BC/" rel="tag"># 找最小值</a>
+              <a href="/bucky0112.github.io/tags/javascript/" rel="tag"># javascript</a>
+              <a href="/bucky0112.github.io/tags/hoisting/" rel="tag"># hoisting</a>
           </div>
 
         
@@ -313,12 +299,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/14/%E5%85%A8%E5%9F%9F%E7%92%B0%E5%A2%83%E8%88%87%E5%85%A8%E5%9F%9F%E7%89%A9%E4%BB%B6/" rel="prev" title="全域環境與全域物件">
-      <i class="fa fa-chevron-left"></i> 全域環境與全域物件
+    <a href="/bucky0112.github.io/2020/04/18/%E7%B7%B4%E7%BF%92%E5%A6%82%E4%BD%95%E8%A7%A3%E9%A1%8C/" rel="prev" title="練習如何解題">
+      <i class="fa fa-chevron-left"></i> 練習如何解題
     </a></div>
       <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/21/%E5%9F%B7%E8%A1%8C%E7%92%B0%E5%A2%83-%E5%89%B5%E9%80%A0%E8%88%87%E6%8F%90%E5%8D%87/" rel="next" title="執行環境：創造與提升">
-      執行環境：創造與提升 <i class="fa fa-chevron-right"></i>
+    <a href="/bucky0112.github.io/2020/04/23/%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8%E8%88%87%E5%8D%80%E5%9F%9F%E8%AE%8A%E6%95%B8/" rel="next" title="全域變數與區域變數">
+      全域變數與區域變數 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -379,7 +365,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#印出-1-100-的奇數"><span class="nav-number">1.</span> <span class="nav-text">印出 1-100 的奇數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fizz-buzz"><span class="nav-number">2.</span> <span class="nav-text">Fizz buzz</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找最小值"><span class="nav-number">3.</span> <span class="nav-text">找最小值</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -592,7 +577,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'bucky0112.github.io',
       owner       : 'bucky0112',
       admin       : ['bucky0112'],
-      id          : '8e3bf706f8da30569cc516de26b4c43d',
+      id          : '608be22592d4bcf8657a6ba96af8d879',
         language: 'zh-TW',
       distractionFreeMode: true
     });
