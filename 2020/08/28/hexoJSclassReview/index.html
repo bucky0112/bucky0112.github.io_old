@@ -23,28 +23,25 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="這一篇文章會提到全域環境與全域物件在瀏覽器中的執行。">
+  <meta name="description" content="在經歷了為期 8 週的課程之後，回顧當時的猶豫，現在覺得上到這個課程真的是太好了，感覺對使用 JavaScript 的信心提升了不少，對於 Vue.js 的掌握度也越來越熟悉，甚至還用 Vue CLI 做了一個電商網站呢！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="全域環境與全域物件">
-<meta property="og:url" content="https://bucky0112.github.io/2020/04/14/%E5%85%A8%E5%9F%9F%E7%92%B0%E5%A2%83%E8%88%87%E5%85%A8%E5%9F%9F%E7%89%A9%E4%BB%B6/index.html">
+<meta property="og:title" content="JavaScript 作品實戰班之課程心得">
+<meta property="og:url" content="https://bucky0112.github.io/2020/08/28/hexoJSclassReview/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="這一篇文章會提到全域環境與全域物件在瀏覽器中的執行。">
+<meta property="og:description" content="在經歷了為期 8 週的課程之後，回顧當時的猶豫，現在覺得上到這個課程真的是太好了，感覺對使用 JavaScript 的信心提升了不少，對於 Vue.js 的掌握度也越來越熟悉，甚至還用 Vue CLI 做了一個電商網站呢！">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://i.imgur.com/RmUrC0K.png">
-<meta property="og:image" content="https://i.imgur.com/5hdiDvJ.png">
-<meta property="og:image" content="https://i.imgur.com/iFQrtzH.png">
-<meta property="og:image" content="https://i.imgur.com/lcxigiR.png">
-<meta property="article:published_time" content="2020-04-14T09:01:35.652Z">
-<meta property="article:modified_time" content="2020-04-16T09:40:15.175Z">
+<meta property="og:image" content="https://i.imgur.com/Cp53XPl.png">
+<meta property="og:image" content="https://i.imgur.com/xwY8Oh0.png">
+<meta property="og:image" content="https://i.imgur.com/LzMdtAN.png">
+<meta property="og:image" content="https://images.unsplash.com/photo-1438783122414-75b2c084bd44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80">
+<meta property="article:published_time" content="2020-08-28T03:20:59.000Z">
+<meta property="article:modified_time" content="2020-08-28T06:04:22.388Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="javascript">
-<meta property="article:tag" content="JavaScript 全攻略：克服 JS 的奇怪部分">
-<meta property="article:tag" content="全域環境">
-<meta property="article:tag" content="全域物件">
+<meta property="article:tag" content="JavaScript 作品實戰班">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/RmUrC0K.png">
+<meta name="twitter:image" content="https://i.imgur.com/Cp53XPl.png">
 
-<link rel="canonical" href="https://bucky0112.github.io/2020/04/14/%E5%85%A8%E5%9F%9F%E7%92%B0%E5%A2%83%E8%88%87%E5%85%A8%E5%9F%9F%E7%89%A9%E4%BB%B6/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/08/28/hexoJSclassReview/">
 
 
 <script id="page-configurations">
@@ -57,7 +54,7 @@
   };
 </script>
 
-  <title>全域環境與全域物件 | Bucky's f2e bucket</title>
+  <title>JavaScript 作品實戰班之課程心得 | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -142,17 +139,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/bucky0112.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">34</span></a>
+    <a href="/bucky0112.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">35</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/bucky0112.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">6</span></a>
+    <a href="/bucky0112.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/bucky0112.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">22</span></a>
+    <a href="/bucky0112.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-link">
@@ -215,7 +212,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/04/14/%E5%85%A8%E5%9F%9F%E7%92%B0%E5%A2%83%E8%88%87%E5%85%A8%E5%9F%9F%E7%89%A9%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/08/28/hexoJSclassReview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
@@ -228,7 +225,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          全域環境與全域物件
+          JavaScript 作品實戰班之課程心得
         </h1>
 
         <div class="post-meta">
@@ -237,23 +234,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
+              
 
-              <time title="創建時間：2020-04-14 17:01:35" itemprop="dateCreated datePublished" datetime="2020-04-14T17:01:35+08:00">2020-04-14</time>
+              <time title="創建時間：2020-08-28 11:20:59 / 修改時間：14:04:22" itemprop="dateCreated datePublished" datetime="2020-08-28T11:20:59+08:00">2020-08-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-04-16 17:40:15" itemprop="dateModified" datetime="2020-04-16T17:40:15+08:00">2020-04-16</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分類於</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/bucky0112.github.io/categories/JavaScript-%E7%9A%84%E6%80%AA%E5%A5%87%E7%89%A9%E8%AA%9E/" itemprop="url" rel="index"><span itemprop="name">JavaScript 的怪奇物語</span></a>
+                  <a href="/bucky0112.github.io/categories/JavaScript-%E4%BD%9C%E5%93%81%E5%AF%A6%E6%88%B0%E7%8F%AD-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">JavaScript 作品實戰班 - 學習心得</span></a>
                 </span>
             </span>
 
@@ -268,37 +259,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>這一篇文章會提到全域環境與全域物件在瀏覽器中的執行。</p>
+        <p>在經歷了為期 8 週的課程之後，回顧當時的猶豫，現在覺得上到這個課程真的是太好了，感覺對使用 JavaScript 的信心提升了不少，對於 Vue.js 的掌握度也越來越熟悉，甚至還用 Vue CLI 做了一個電商網站呢！</p>
 <a id="more"></a>
 
-<h2 id="全域環境"><a href="#全域環境" class="headerlink" title="全域環境"></a>全域環境</h2><hr>
-<p>首先來執行個 JavaScript 檔案看看：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>等等，這是空的耶！沒寫任何東西也能執行嗎？</p>
-<p>首先在執行 JavaScript 時，會先創造<strong>全域執行環境</strong>，所謂的<strong>全域</strong>代表可以在任何地方取用它。</p>
-<p>而全域環境會創造 2 樣東西：</p>
-<ol>
-<li>全域物件</li>
-<li>特殊變數 - this</li>
-</ol>
-<h2 id="全域物件"><a href="#全域物件" class="headerlink" title="全域物件"></a>全域物件</h2><hr>
-<p>我們試著打開瀏覽器開發者工具的 console，雖然看起來沒東西</p>
-<p><img src="https://i.imgur.com/RmUrC0K.png" alt="Image"></p>
-<p>但是輸入 <code>this</code> 看看，可以發現明明沒有輸入任何程式碼，卻出現了 <strong>Window</strong> 這個物件</p>
-<p><img src="https://i.imgur.com/5hdiDvJ.png" alt=""></p>
-<p>而這個 window 物件，就是瀏覽器裡這個頁面的全域物件。</p>
-<p><strong>this</strong> 代表的是這個分頁，如果開另一份分頁，會有另一個全域物件。</p>
-<p>每一個視窗都會有自己的執行環境，和自己的全域物件。</p>
-<p>來看以下的範例，建立一個變數，並給它一個值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &quot;hello&quot;</span><br></pre></td></tr></table></figure>
-
-<p>這時候再打開 console ，輸入 <code>window</code> 看看。<br>可以看到裡面多了一個物件，名稱是 a，值是 “hello”。</p>
-<p><img src="https://i.imgur.com/iFQrtzH.png" alt=""></p>
-<p>由於創造變數時，變數不是在函式中，所以變數會和全域物件連結，這時的 a 就是全域物件。</p>
-<p>如果在瀏覽器運行，全域物件就是 window，還會得到一個特殊變數 this ，在使用瀏覽器的情況下， <strong>window = this</strong>。</p>
-<p>所以如果要找出 a 的話，就可以使用 <code>this.a</code>、<code>window.a</code>，或是直接輸入 <code>a</code>：</p>
-<p><img src="https://i.imgur.com/lcxigiR.png" alt="Image"></p>
+<h2 id="當初為什麼報名這堂課？"><a href="#當初為什麼報名這堂課？" class="headerlink" title="當初為什麼報名這堂課？"></a>當初為什麼報名這堂課？</h2><p>雖然我在前端領域學習了一陣子了，不過對於 JavaScript 還是有點不夠熟練，以至於對於做出一個作品出來覺得沒有什麼信心，所以遲遲準備沒有好的作品去面試。這時候正好六角學院開了一個 - <strong>JavaScript 作品實戰班</strong>。<br><img src="https://i.imgur.com/Cp53XPl.png" alt="Image"><br>看了一下課綱，六角學院的老師們將會在 8 週教我們 JavaScript 的邏輯規劃、將 ES6 運用在實戰中、從 Vue.js 的基礎教學，一直到使用 Vue CLI，一直到做出一個 SPA 網站出來。<br>我自己也剛好在六角學院學 Vue.js 中，感覺這是一個可以快速練功的好選擇，所以就刷了下去惹。<img src="https://i.imgur.com/xwY8Oh0.png" alt="Image"></p>
+<h2 id="回顧學習過程與最喜歡哪些活動？"><a href="#回顧學習過程與最喜歡哪些活動？" class="headerlink" title="回顧學習過程與最喜歡哪些活動？"></a>回顧學習過程與最喜歡哪些活動？</h2><p>這 8 週下來，都會有每日任務讓你從做中學，甚至還有團體任務讓你跟組員們一起學習解題，啊！對了，忘了說到六角在這課程中導入了打怪的模式，也分了組別可以有團體打王，或是每週任務讓個人輸出傷害讓最後的魔王損血。<br><img src="https://i.imgur.com/LzMdtAN.png" alt="Image"><br>前面提到的每日任務，是我個人蠻喜歡的一個部份。老師設計了一個故事情境並融入 JavaScript 與 Vue.js 的運用，讓我在不知不覺中越來越進步（雖然有些情境是滿扯的啦😄）。然後每週主線任務也是漸進式的讓我們從關注點分離運用在 JavaScript 的規劃，進而帶到目前主流的 JavaScript 前端框架之一 — <strong>Vue.js</strong>。然後讓我們學會了串 api，自己規劃一個電商網站的後台與前台。</p>
+<h2 id="最大的收獲是？"><a href="#最大的收獲是？" class="headerlink" title="最大的收獲是？"></a>最大的收獲是？</h2><p>其實上直播班的最大好處是可以感受到老師跟助教們擁有實戰經驗的教學，有什麼問題只要在 Slack 發問，就會很快得到如何處理 bug 的方法（懷疑他們 484 隨時掛在線上），有時候問的問題也會被其他有經驗的同學幫忙解答，還會跟組員討論那個部份怎樣做，這個地方要注意什麼細節，這時候就會覺得自己在這條學習的路上並不孤單，有著跟志同道合的夥伴講著相同的語言的美好氛圍。<br>雖然現在的我還是一個在前端領域的小人物，但是回首過去，其實我為自己跨出這一大步而感到驕傲。<br><img src="https://images.unsplash.com/photo-1438783122414-75b2c084bd44?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80" alt="Image"></p>
 
     </div>
 
@@ -308,9 +274,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/bucky0112.github.io/tags/javascript/" rel="tag"># javascript</a>
-              <a href="/bucky0112.github.io/tags/%E5%85%A8%E5%9F%9F%E7%92%B0%E5%A2%83/" rel="tag"># 全域環境</a>
-              <a href="/bucky0112.github.io/tags/%E5%85%A8%E5%9F%9F%E7%89%A9%E4%BB%B6/" rel="tag"># 全域物件</a>
+              <a href="/bucky0112.github.io/tags/JavaScript-%E4%BD%9C%E5%93%81%E5%AF%A6%E6%88%B0%E7%8F%AD/" rel="tag"># JavaScript 作品實戰班</a>
           </div>
 
         
@@ -319,13 +283,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/13/JSnotice%EF%BC%9A%E5%80%BC%E9%85%8D%E5%B0%8D%E8%88%87%E7%89%A9%E4%BB%B6/" rel="prev" title="JS notice： 名稱/值配對與物件">
-      <i class="fa fa-chevron-left"></i> JS notice： 名稱/值配對與物件
+    <a href="/bucky0112.github.io/2020/06/01/vue-components/" rel="prev" title="Vue.js 的 component 是什麼？">
+      <i class="fa fa-chevron-left"></i> Vue.js 的 component 是什麼？
     </a></div>
-      <div class="post-nav-item">
-    <a href="/bucky0112.github.io/2020/04/18/%E7%B7%B4%E7%BF%92%E5%A6%82%E4%BD%95%E8%A7%A3%E9%A1%8C/" rel="next" title="練習如何解題">
-      練習如何解題 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -385,7 +346,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全域環境"><span class="nav-number">1.</span> <span class="nav-text">全域環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全域物件"><span class="nav-number">2.</span> <span class="nav-text">全域物件</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#當初為什麼報名這堂課？"><span class="nav-number">1.</span> <span class="nav-text">當初為什麼報名這堂課？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回顧學習過程與最喜歡哪些活動？"><span class="nav-number">2.</span> <span class="nav-text">回顧學習過程與最喜歡哪些活動？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大的收獲是？"><span class="nav-number">3.</span> <span class="nav-text">最大的收獲是？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -401,20 +362,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/bucky0112.github.io/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/bucky0112.github.io/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/bucky0112.github.io/tags/">
           
-        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -598,7 +559,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'bucky0112.github.io',
       owner       : 'bucky0112',
       admin       : ['bucky0112'],
-      id          : '30b17b006a7200f71c118d05a7b15424',
+      id          : '7a7ac2de1adc2f015abedc929fadd5e8',
         language: 'zh-TW',
       distractionFreeMode: true
     });
