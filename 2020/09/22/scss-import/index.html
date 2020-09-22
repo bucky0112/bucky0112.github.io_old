@@ -23,22 +23,22 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="巴奇的前端桶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bucky&#39;s f2e bucket">
-<meta property="og:url" content="https://bucky0112.github.io/categories/%E6%8C%91%E6%88%B0-Codewar-%E7%B3%BB%E5%88%97/index.html">
+  <meta name="description" content="在以往單純使用 CSS 的開發經驗中，總是會使用一支 CSS 檔案來設計所有的樣式，但是這樣的缺點是之後的維護相當困難，要找一個樣式的 code 可能要找很久。之前在寫 Vue 專案的時候，覺得元件式的管理很棒，所有元件分離讓之後的管理變得容易很多，現在才發現原來 SCSS 也可以做類似的事情，感覺好用很多啊～">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SCSS import 切分檔案管理">
+<meta property="og:url" content="https://bucky0112.github.io/2020/09/22/scss-import/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="巴奇的前端桶">
+<meta property="og:description" content="在以往單純使用 CSS 的開發經驗中，總是會使用一支 CSS 檔案來設計所有的樣式，但是這樣的缺點是之後的維護相當困難，要找一個樣式的 code 可能要找很久。之前在寫 Vue 專案的時候，覺得元件式的管理很棒，所有元件分離讓之後的管理變得容易很多，現在才發現原來 SCSS 也可以做類似的事情，感覺好用很多啊～">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-09-22T14:40:59.000Z">
+<meta property="article:modified_time" content="2020-09-22T14:47:21.805Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="f2e">
-<meta property="article:tag" content="front end">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="sass">
+<meta property="article:tag" content="scss">
+<meta property="article:tag" content="import">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bucky0112.github.io/categories/%E6%8C%91%E6%88%B0-Codewar-%E7%B3%BB%E5%88%97/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/09/22/scss-import/">
 
 
 <script id="page-configurations">
@@ -46,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>分類: 挑戰 Codewar 系列 | Bucky's f2e bucket</title>
+  <title>SCSS import 切分檔案管理 | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -202,57 +202,114 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">挑戰 Codewar 系列
-          <small>分類</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/09/22/scss-import/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Bucky Chu">
+      <meta itemprop="description" content="巴奇的前端桶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bucky's f2e bucket">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SCSS import 切分檔案管理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-09-22 22:40:59 / 修改時間：22:47:21" itemprop="dateCreated datePublished" datetime="2020-09-22T22:40:59+08:00">2020-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/bucky0112.github.io/categories/SCSS-%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">SCSS 學習筆記</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>在以往單純使用 CSS 的開發經驗中，總是會使用一支 CSS 檔案來設計所有的樣式，但是這樣的缺點是之後的維護相當困難，要找一個樣式的 code 可能要找很久。之前在寫 Vue 專案的時候，覺得元件式的管理很棒，所有元件分離讓之後的管理變得容易很多，現在才發現原來 SCSS 也可以做類似的事情，感覺好用很多啊～</p>
+<a id="more"></a>
+
+<h2 id="變數管理"><a href="#變數管理" class="headerlink" title="變數管理"></a>變數管理</h2><p>這個方法在我上次的專案中， 在我自定義 BootstrapVue 的顏色時有用到。而在 SCSS 中的作法也是差不多，假設目前有一支 .scss 檔案，已經有設定顏色的變數，想要讓變數分割成一支獨立的檔案來管理的話，做兩步驟就可以成功使用 import 來管理：</p>
+<ol>
+<li>新增一支 <code>_variable.scss</code>，裡面放變數的設定。</li>
+<li>在主要 .scss 檔中 import 檔案：<code>@import &quot;variable&quot;;</code></li>
+</ol>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// all.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"variable"</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banner-title</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">460px</span>;</span><br><span class="line">    <span class="attribute">background</span>: lighten(<span class="variable">$danger</span>, <span class="number">20%</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$white</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.main-menu</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _variable.scss</span></span><br><span class="line"><span class="variable">$danger</span>: <span class="number">#ff0000</span>;</span><br><span class="line"><span class="variable">$white</span>: <span class="number">#fff</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="分離式管理-SCSS"><a href="#分離式管理-SCSS" class="headerlink" title="分離式管理 SCSS"></a>分離式管理 SCSS</h2><p>前面提到將變數分開管理，那麼如果要將元件分得更細的話也可以，例如可以分成每一頁一個 .scss 檔，或是把 navbar 或是 footer 分開放，當然如果有使用 CSS Reset 的話，也是可以使用 import 管理，例如下方的例子：</p>
+<ul>
+<li>新增一個 <code>_header.scss</code></li>
+<li>在 <code>all.scss</code> 中 <code>@import “header”</code></li>
+</ul>
+<p>這樣子把 <code>all.scss</code> 當作一個管理其他元件的檔案，在維護管理上就更加的方便了。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-07T23:03:09+08:00"
-              content="2020-05-07">
-          05-07
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/bucky0112.github.io/tags/scss/" rel="tag"># scss</a>
+              <a href="/bucky0112.github.io/tags/import/" rel="tag"># import</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/bucky0112.github.io/2020/05/07/CodewarChallenge/" itemprop="url">
-            <span itemprop="name">挑戰 Codewar - 1</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/09/21/destructuring-assignment-es6/" rel="prev" title="ES6 好用語法 - 解構賦值">
+      <i class="fa fa-chevron-left"></i> ES6 好用語法 - 解構賦值
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -299,6 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#變數管理"><span class="nav-number">1.</span> <span class="nav-text">變數管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分離式管理-SCSS"><span class="nav-number">2.</span> <span class="nav-text">分離式管理 SCSS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,6 +558,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e95717eda69cbcfa80fd',
+      clientSecret: '62a118b359bfe09dc88016d1db7240dff35dbd59',
+      repo        : 'bucky0112.github.io',
+      owner       : 'bucky0112',
+      admin       : ['bucky0112'],
+      id          : 'd81bb23d1e003210074918db1d517a57',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
