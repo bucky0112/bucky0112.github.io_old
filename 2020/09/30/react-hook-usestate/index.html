@@ -23,22 +23,22 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="巴奇的前端桶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bucky&#39;s f2e bucket">
-<meta property="og:url" content="https://bucky0112.github.io/tags/component/index.html">
+  <meta name="description" content="前面提到當變數更新時，React 還不知道資料有更新。所以 React 提供了一個方法來監控而且管理資料，而這就是 React 的 Hooks 之一 - useState。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 useState 來管理狀態">
+<meta property="og:url" content="https://bucky0112.github.io/2020/09/30/react-hook-usestate/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="巴奇的前端桶">
+<meta property="og:description" content="前面提到當變數更新時，React 還不知道資料有更新。所以 React 提供了一個方法來監控而且管理資料，而這就是 React 的 Hooks 之一 - useState。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-09-29T16:23:26.000Z">
+<meta property="article:modified_time" content="2020-09-29T16:26:47.429Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="f2e">
-<meta property="article:tag" content="front end">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="hook">
+<meta property="article:tag" content="useState">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bucky0112.github.io/tags/component/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/09/30/react-hook-usestate/">
 
 
 <script id="page-configurations">
@@ -46,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: component | Bucky's f2e bucket</title>
+  <title>使用 useState 來管理狀態 | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -202,77 +202,134 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">component
-          <small>標籤</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/09/30/react-hook-usestate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Bucky Chu">
+      <meta itemprop="description" content="巴奇的前端桶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bucky's f2e bucket">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 useState 來管理狀態
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-09-30 00:23:26 / 修改時間：00:26:47" itemprop="dateCreated datePublished" datetime="2020-09-30T00:23:26+08:00">2020-09-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/bucky0112.github.io/categories/React-%E5%AD%B8%E7%BF%92%E7%B3%BB%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">React 學習系列</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+        <p>前面提到當變數更新時，React 還不知道資料有更新。所以 React 提供了一個方法來監控而且管理資料，而這就是 React 的 Hooks 之一 - <strong>useState</strong>。</p>
+<a id="more"></a>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+<h2 id="什麼是-State"><a href="#什麼是-State" class="headerlink" title="什麼是 State"></a>什麼是 State</h2><p>首先要先來了解 State 是什麼，才能 use 它。<br>根據 <a href="https://zh-hant.reactjs.org/docs/state-and-lifecycle.html" target="_blank" rel="noopener">React 官網</a>說到，State 類似 props，不過差別在於 State 是由 Component 私有控制的。可以把它當成是資料，<br>假設一個資料有兩種狀態，true 或 false，預設狀態是 false，當你使用它時，就會變成 true，這種狀態就是 state。</p>
+<h2 id="來試著使用-State-Hook-吧"><a href="#來試著使用-State-Hook-吧" class="headerlink" title="來試著使用 State Hook 吧"></a>來試著使用 State Hook 吧</h2><p>先來簡單瞭解一下什麼是 Hook：</p>
+<blockquote>
+<p><em>Hook</em> 是 React 16.8 中增加的新功能。它讓你不必寫 class 就能使用 state 以及其他 React 的功能。 (來自 React 官網的解釋)</p>
+</blockquote>
+<p>簡單來說 Hook 就是 React 中各項特殊 function，而本篇則是會介紹 <strong>useState</strong> 的用法。</p>
+<h2 id="開始使用-useState"><a href="#開始使用-useState" class="headerlink" title="開始使用 useState"></a>開始使用 useState</h2><p>下方有一個 Component，來試著使用 useState 改動畫面。</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="React Component" src="https://codepen.io/bucky0112/embed/JjXVMEK?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bucky0112/pen/JjXVMEK' target="_blank" rel="noopener">React Component</a> by Bucky Chu
+  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+</iframe>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-28T23:29:08+08:00"
-              content="2020-09-28">
-          09-28
-        </time>
-      </div>
+<ol>
+<li><p>從 React 中引入 useState。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; useState &#125; = React;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>呼叫 useState，宣告一個 state，並回傳了 2 個值。第一個是變數，並帶入參數給 useState；第二個是更新變數的函式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [變數, 更新變數的函式] = useState(變數預設值)</span></span><br><span class="line"><span class="keyword">const</span> [count, setCount] = useState(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>讀取 State。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className&#x3D;&quot;num&quot;&gt;&#123;count&#125;&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>透過點擊，就會呼叫 setCount 並傳入新的值，React 會 重新 render component，顯示新的 State 值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className&#x3D;&quot;plus&quot;</span><br><span class="line">	onClick&#x3D;&#123;() &#x3D;&gt; setCount(count + 1)&#125;</span><br><span class="line">&gt;+&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/bucky0112.github.io/2020/09/28/react-component/" itemprop="url">
-            <span itemprop="name">建立並使用 React Component</span>
-          </a>
-      </div>
+</li>
+</ol>
+<p>完整的點擊器範例就完成了</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="React useState" src="https://codepen.io/bucky0112/embed/GRZaZEz?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bucky0112/pen/GRZaZEz' target="_blank" rel="noopener">React useState</a> by Bucky Chu
+  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+</iframe>
 
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-01T22:01:07+08:00"
-              content="2020-06-01">
-          06-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/bucky0112.github.io/2020/06/01/vue-components/" itemprop="url">
-            <span itemprop="name">Vue.js 的 component 是什麼？</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+<h2 id="useState-做了什麼？"><a href="#useState-做了什麼？" class="headerlink" title="useState 做了什麼？"></a>useState 做了什麼？</h2><p>我們透過 useState 建立一個<strong>需要被即時監控的資料變數</strong>，在這個範例中也就是 count，並呼叫了它提供的更新變數的函式來改變數值。<br>如果變數的值有變化，也確實有呼叫 setCount 的話，那麼 React 就會以資料驅動畫面更新，這就是 useState 幫我們做的事情。</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/bucky0112.github.io/tags/react/" rel="tag"># react</a>
+              <a href="/bucky0112.github.io/tags/hook/" rel="tag"># hook</a>
+              <a href="/bucky0112.github.io/tags/useState/" rel="tag"># useState</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/09/28/react-component/" rel="prev" title="建立並使用 React Component">
+      <i class="fa fa-chevron-left"></i> 建立並使用 React Component
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -319,6 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是-State"><span class="nav-number">1.</span> <span class="nav-text">什麼是 State</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#來試著使用-State-Hook-吧"><span class="nav-number">2.</span> <span class="nav-text">來試著使用 State Hook 吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始使用-useState"><span class="nav-number">3.</span> <span class="nav-text">開始使用 useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useState-做了什麼？"><span class="nav-number">4.</span> <span class="nav-text">useState 做了什麼？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -520,6 +578,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e95717eda69cbcfa80fd',
+      clientSecret: '62a118b359bfe09dc88016d1db7240dff35dbd59',
+      repo        : 'bucky0112.github.io',
+      owner       : 'bucky0112',
+      admin       : ['bucky0112'],
+      id          : '23acc68254ee2d00176cfc072867b6e0',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://bucky0112.github.io/2020/09/30/react-hook-usestate/</loc>
+    
+    <lastmod>2020-09-29T16:26:47.429Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://bucky0112.github.io/2020/09/28/react-component/</loc>
     
     <lastmod>2020-09-28T15:33:22.160Z</lastmod>
