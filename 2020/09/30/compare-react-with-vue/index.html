@@ -23,22 +23,21 @@
     var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="巴奇的前端桶">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bucky&#39;s f2e bucket">
-<meta property="og:url" content="https://bucky0112.github.io/tags/useState/index.html">
+  <meta name="description" content="目前學 React 學了一點皮毛，而 Vue 也使用了一陣子，想寫一篇來比較一下兩者對於我這個小碼農有什麼不一樣。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React v.s Vue 之 Component 比較心得">
+<meta property="og:url" content="https://bucky0112.github.io/2020/09/30/compare-react-with-vue/index.html">
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
-<meta property="og:description" content="巴奇的前端桶">
+<meta property="og:description" content="目前學 React 學了一點皮毛，而 Vue 也使用了一陣子，想寫一篇來比較一下兩者對於我這個小碼農有什麼不一樣。">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-09-30T07:59:50.000Z">
+<meta property="article:modified_time" content="2020-09-30T08:06:25.217Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="f2e">
-<meta property="article:tag" content="front end">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="next">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://bucky0112.github.io/tags/useState/">
+<link rel="canonical" href="https://bucky0112.github.io/2020/09/30/compare-react-with-vue/">
 
 
 <script id="page-configurations">
@@ -46,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: useState | Bucky's f2e bucket</title>
+  <title>React v.s Vue 之 Component 比較心得 | Bucky's f2e bucket</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
     <script data-pjax>
@@ -202,57 +201,121 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">useState
-          <small>標籤</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/09/30/compare-react-with-vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Bucky Chu">
+      <meta itemprop="description" content="巴奇的前端桶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bucky's f2e bucket">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          React v.s Vue 之 Component 比較心得
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-09-30 15:59:50 / 修改時間：16:06:25" itemprop="dateCreated datePublished" datetime="2020-09-30T15:59:50+08:00">2020-09-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/bucky0112.github.io/categories/%E4%B8%8D%E9%82%A3%E9%BA%BC%E9%87%8D%E8%A6%81%E7%9A%84/" itemprop="url" rel="index"><span itemprop="name">不那麼重要的</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>目前學 React 學了一點皮毛，而 Vue 也使用了一陣子，想寫一篇來比較一下兩者對於我這個小碼農有什麼不一樣。</p>
+<a id="more"></a>
+
+<h2 id="Vue-的-Component"><a href="#Vue-的-Component" class="headerlink" title="Vue 的 Component"></a>Vue 的 Component</h2><p>我用 Vue 寫了一個簡單的 counter，預設數字是 0，當點擊 + 時，數字增加 1；而點擊 — 時，數字減 1，數字等於 0 時，就不能減，並且用 3 個 component 放在一起。</p>
+<p>直接看完成品：</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="Vue Counter Demo" src="https://codepen.io/bucky0112/embed/MWydQgY?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bucky0112/pen/MWydQgY' target="_blank" rel="noopener">Vue Counter Demo</a> by Bucky Chu
+  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h2 id="React-的-Component"><a href="#React-的-Component" class="headerlink" title="React 的 Component"></a>React 的 Component</h2><p>React 的部份也是一樣的功能，一樣也是放 3 個 component。</p>
+<p>直接玩玩看：</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="React count demo" src="https://codepen.io/bucky0112/embed/KKzLZJL?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bucky0112/pen/KKzLZJL' target="_blank" rel="noopener">React count demo</a> by Bucky Chu
+  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+</iframe>
+
+<h2 id="兩者比較"><a href="#兩者比較" class="headerlink" title="兩者比較"></a>兩者比較</h2><p>先說這只是我自己的心得，可能有某些個人喜好影響。</p>
+<ul>
+<li><p>Vue：<br>我覺得 Vue 的寫法還滿直觀的，而且 HTML、CSS 跟 JavaScript 三者分離的寫法滿乾淨，可能是我先學 Vue，所以一些語法的部份已經滿習慣的，寫出來也蠻快的，我個人是蠻喜歡的。<br>真要說缺點的話，可能在 CodePen 有些限制，所以 CSS 的部份要另外寫，沒辦法直接像在 Vue CLI 裡寫在 .vue 中。如果要寫在 template 裡面也是可以，寫成 inline-style 也是一個方法，不過當樣式一多的話，就會看起來很亂，我自己是不太喜歡。</p>
+</li>
+<li><p>React：<br>什麼都可以寫進 JavaScript 裡面還蠻爽的，這點跟 Vue 差非常多，連 CSS 樣式都可以寫進 React 裡，如果要 code review 的話就蠻快的，不用分開來看（也有可能我寫的功能不多）。語法部份目前因為還不熟，所以可能就不像 Vue 那樣直觀，不過這部分還需要時間驗證。<br>缺點的部份，因為我還沒學得很深，只會使用 <code>useState</code> 而已，所以目前覺得好像沒有什麼不方便的地方。</p>
+</li>
+</ul>
+<h2 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h2><p>好像寫了一篇廢文，不過還是想紀錄一下目前的心得。總之 Vue 還是我目前的主力開發工具，然後 React 純粹是個人興趣在學習，未來我希望還是能把技能繼續點在這兩項上面，然後可能看工作需求再做決定，這兩個框架我都蠻喜歡的，就繼續加強觀念，多加練習，希望能練成 React &amp; Vue 雙刀流吧～</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-09-30T00:23:26+08:00"
-              content="2020-09-30">
-          09-30
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/bucky0112.github.io/tags/vue/" rel="tag"># vue</a>
+              <a href="/bucky0112.github.io/tags/react/" rel="tag"># react</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/bucky0112.github.io/2020/09/30/react-hook-usestate/" itemprop="url">
-            <span itemprop="name">使用 useState 來管理狀態</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/09/30/react-hook-usestate/" rel="prev" title="使用 useState 來管理狀態">
+      <i class="fa fa-chevron-left"></i> 使用 useState 來管理狀態
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -299,6 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-的-Component"><span class="nav-number">1.</span> <span class="nav-text">Vue 的 Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-的-Component"><span class="nav-number">2.</span> <span class="nav-text">React 的 Component</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兩者比較"><span class="nav-number">3.</span> <span class="nav-text">兩者比較</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#總結"><span class="nav-number">4.</span> <span class="nav-text">總結</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -500,6 +564,25 @@ window.addEventListener('pjax:success', () => {
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e95717eda69cbcfa80fd',
+      clientSecret: '62a118b359bfe09dc88016d1db7240dff35dbd59',
+      repo        : 'bucky0112.github.io',
+      owner       : 'bucky0112',
+      admin       : ['bucky0112'],
+      id          : '21ef667ad0ba96d2d550e25a58c0e0bb',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
     </div>
 </body>
