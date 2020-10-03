@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta name="google-site-verification" content="6QFO0xnuybw-G6Xb4Idq1AhwXfxCzYL8b7i9CIxU4mI" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/bucky0112.github.io/images/logo.svg" color="#222">
+  <link rel="manifest" href="/bucky0112.github.io/images/manifest.json">
+  <meta name="msapplication-config" content="/bucky0112.github.io/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/bucky0112.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/bucky0112.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bucky0112.github.io","root":"/bucky0112.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"222","save":"manual"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"搜尋文章","hits_empty":"找不到輸入的關鍵字: ${query}","hits_stats":"找到 ${hits} 筆資料，花了 ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="Gulp 是一種前端自動化工具，可以幫助開發者將 SASS 跟 ES6 編譯成一般瀏覽器看得懂的版本，也可以把圖片跟 .css 還有 .js 壓縮成更小的檔案，是一個很方便的開發工具，這篇文章將介紹如何安裝 Gulp 並引入專案中。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安裝 Gulp">
+<meta property="og:url" content="https://bucky0112.github.io/2020/10/03/gulp-install/index.html">
+<meta property="og:site_name" content="Bucky&#39;s f2e bucket">
+<meta property="og:description" content="Gulp 是一種前端自動化工具，可以幫助開發者將 SASS 跟 ES6 編譯成一般瀏覽器看得懂的版本，也可以把圖片跟 .css 還有 .js 壓縮成更小的檔案，是一個很方便的開發工具，這篇文章將介紹如何安裝 Gulp 並引入專案中。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/vrH4DDn.png">
+<meta property="article:published_time" content="2020-10-03T08:56:38.000Z">
+<meta property="article:modified_time" content="2020-10-03T10:28:35.460Z">
+<meta property="article:author" content="Bucky Chu">
+<meta property="article:tag" content="gulp">
+<meta property="article:tag" content="install">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/vrH4DDn.png">
+
+<link rel="canonical" href="https://bucky0112.github.io/2020/10/03/gulp-install/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>安裝 Gulp | Bucky's f2e bucket</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163831260-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163831260-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/bucky0112.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bucky's f2e bucket</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">巴奇的前端桶</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/bucky0112.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/bucky0112.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">62</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/bucky0112.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/bucky0112.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">38</span></a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/bucky0112.github.io/link/" rel="section"><i class="fa fa-link fa-fw"></i>link</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/bucky0112" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bucky0112.github.io/2020/10/03/gulp-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/bucky0112.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Bucky Chu">
+      <meta itemprop="description" content="巴奇的前端桶">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bucky's f2e bucket">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          安裝 Gulp
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-10-03 16:56:38 / 修改時間：18:28:35" itemprop="dateCreated datePublished" datetime="2020-10-03T16:56:38+08:00">2020-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/bucky0112.github.io/categories/Gulp-%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8B%95%E5%8C%96%E5%B7%A5%E5%85%B7%E9%96%8B%E7%99%BC/" itemprop="url" rel="index"><span itemprop="name">Gulp 前端自動化工具開發</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Gulp 是一種前端自動化工具，可以幫助開發者將 SASS 跟 ES6 編譯成一般瀏覽器看得懂的版本，也可以把圖片跟 .css 還有 .js 壓縮成更小的檔案，是一個很方便的開發工具，這篇文章將介紹如何安裝 Gulp 並引入專案中。</p>
+<a id="more"></a>
+
+<h2 id="安裝-NVM"><a href="#安裝-NVM" class="headerlink" title="安裝 NVM"></a>安裝 NVM</h2><p>安裝 Gulp 之前，首先你的電腦需要有 Node.js 的環境，建議使用 NVM 來安裝 Node.js，方便日後可以切換不同版本的 Node.js。</p>
+<ol>
+<li>使用 <code>cURL</code> 或 <code>Wget</code> 指令安裝：：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>確認是否安裝成功，輸入指令確認，成功的話會顯示 <code>nvm</code>：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">command</span> -v nvm</span><br></pre></td></tr></table></figure>
+
+<h2 id="用-NVM-安裝-Node-js"><a href="#用-NVM-安裝-Node-js" class="headerlink" title="用 NVM 安裝 Node.js"></a>用 NVM 安裝 Node.js</h2><ol>
+<li>輸入指令查看 LTS 版本（長期穩定開發版本）：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm ls-remote --lts</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/vrH4DDn.png" alt="0EC377CE-88E1-44E7-92E3-9FB180441B8C"></p>
+<ol start="2">
+<li>輸入指令安裝指定版本：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install v12.18.4</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>確定有無成功安裝 Node.js：<code>node -v</code>，如果有會顯示版本。</li>
+<li>確認 npm 版本：<code>npm -v</code>，如果有會顯示版本。</li>
+</ol>
+<h2 id="安裝-Gulp"><a href="#安裝-Gulp" class="headerlink" title="安裝 Gulp"></a>安裝 Gulp</h2><p>安裝了一堆東西，接著就是安裝 Gulp 了：</p>
+<ol>
+<li>安裝 Gulp 在 Global 環境：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global gulp-cli</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>確定有無成功安裝 Gulp：<code>gulp -v</code>，如果有會顯示版本。</li>
+</ol>
+<p>恭喜你，可以開始 Gulp 專案了🎉</p>
+<h2 id="初始化專案"><a href="#初始化專案" class="headerlink" title="初始化專案"></a>初始化專案</h2><ol>
+<li>利用指令 <code>cd</code> 到專案資料夾，輸入 <code>npm init</code>，建立一個 package.json，接著會確認一些資料，沒什麼需要修改的話就一路 Enter 到底就好。</li>
+<li>輸入 <code>npm install --save gulp</code>，建立資訊在你的 package.json 中。</li>
+<li>輸入 <code>gulp -v</code> 確認安裝完成。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/bucky0112.github.io/tags/gulp/" rel="tag"># gulp</a>
+              <a href="/bucky0112.github.io/tags/install/" rel="tag"># install</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/bucky0112.github.io/2020/10/01/react-logical-operators/" rel="prev" title="React 運用邏輯運算子解決 JSX 問題">
+      <i class="fa fa-chevron-left"></i> React 運用邏輯運算子解決 JSX 問題
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-NVM"><span class="nav-number">1.</span> <span class="nav-text">安裝 NVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-NVM-安裝-Node-js"><span class="nav-number">2.</span> <span class="nav-text">用 NVM 安裝 Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安裝-Gulp"><span class="nav-number">3.</span> <span class="nav-text">安裝 Gulp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化專案"><span class="nav-number">4.</span> <span class="nav-text">初始化專案</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Bucky Chu"
+      src="/bucky0112.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Bucky Chu</p>
+  <div class="site-description" itemprop="description">巴奇的前端桶</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/bucky0112.github.io/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/bucky0112.github.io/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/bucky0112.github.io/tags/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/bucky0112" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;bucky0112" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bucky0112@gmail.com" title="E-Mail → mailto:bucky0112@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/bucky0112" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;bucky0112" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/timmychu0112" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;timmychu0112" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bucky Chu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/bucky0112.github.io/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/bucky0112.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/bucky0112.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/bucky0112.github.io/js/utils.js"></script>
+
+<script src="/bucky0112.github.io/js/motion.js"></script>
+
+
+<script src="/bucky0112.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/bucky0112.github.io/js/next-boot.js"></script>
+
+<script src="/bucky0112.github.io/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/bucky0112.github.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'e95717eda69cbcfa80fd',
+      clientSecret: '62a118b359bfe09dc88016d1db7240dff35dbd59',
+      repo        : 'bucky0112.github.io',
+      owner       : 'bucky0112',
+      admin       : ['bucky0112'],
+      id          : '5aa397e7358ec9853b6c9411dbf20b55',
+        language: 'zh-TW',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+    </div>
+</body>
+</html>
