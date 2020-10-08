@@ -31,10 +31,11 @@
 <meta property="og:description" content="前面提到如何使用邏輯運算子來判斷顯示加號減號，這篇則是介紹其他方式，也就是使用 CSS 來動態將 HTML 元素隱藏起來。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-10-07T16:49:12.000Z">
-<meta property="article:modified_time" content="2020-10-07T16:56:34.799Z">
+<meta property="article:modified_time" content="2020-10-08T15:13:13.921Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="動態加入 css">
+<meta property="article:tag" content="動態加入 class">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/10/08/react-logical-style/">
@@ -135,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/bucky0112.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">64</span></a>
+    <a href="/bucky0112.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">65</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -232,7 +233,7 @@
               <span class="post-meta-item-text">發表於</span>
               
 
-              <time title="創建時間：2020-10-08 00:49:12 / 修改時間：00:56:34" itemprop="dateCreated datePublished" datetime="2020-10-08T00:49:12+08:00">2020-10-08</time>
+              <time title="創建時間：2020-10-08 00:49:12 / 修改時間：23:13:13" itemprop="dateCreated datePublished" datetime="2020-10-08T00:49:12+08:00">2020-10-08</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,6 +276,23 @@
   See the Pen <a href='https://codepen.io/bucky0112/pen/vYKYWYe' target="_blank" rel="noopener">React counter use css</a> by Bucky Chu
   (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
 </iframe>
+
+<h2 id="動態加入-class"><a href="#動態加入-class" class="headerlink" title="動態加入 class"></a>動態加入 class</h2><p>除了動態加入 inline-style 以外，還可以動態加入 class 來顯示樣式，作法也差不多。</p>
+<ol>
+<li>在 css 部份設定一個 class，並帶入樣式：</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hidden</span> &#123;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>在加號減號部份加上動態 class 效果：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div </span><br><span class="line">  className=&#123;<span class="string">`plus <span class="subst">$&#123;count &gt;= <span class="number">10</span> &amp;&amp; <span class="string">'hidden'</span>&#125;</span>`</span>&#125;</span><br><span class="line">  onClick=&#123;() =&gt; setCount(count + <span class="number">1</span>)&#125;</span><br><span class="line">&gt;</span><br><span class="line">	+</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;div</span></span><br><span class="line"><span class="regexp">  className=&#123;`minus $&#123;count &lt; 1 &amp;&amp; 'hidden'&#125;`&#125;</span></span><br><span class="line"><span class="regexp">  onClick=&#123;() =&gt; setCount(count - 1)&#125;</span></span><br><span class="line"><span class="regexp">&gt;</span></span><br><span class="line"><span class="regexp">  -</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>呈現的效果是一樣的，可以在 CodePen 玩玩看：</p>
+<iframe height="265" style="width: 100%;" scrolling="no" title="React counter use css class" src="https://codepen.io/bucky0112/embed/MWeYYwb?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/bucky0112/pen/MWeYYwb' target="_blank" rel="noopener">React counter use css class</a> by Bucky Chu
+  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+</iframe>
     </div>
 
     
@@ -285,6 +303,7 @@
           <div class="post-tags">
               <a href="/bucky0112.github.io/tags/react/" rel="tag"># react</a>
               <a href="/bucky0112.github.io/tags/%E5%8B%95%E6%85%8B%E5%8A%A0%E5%85%A5-css/" rel="tag"># 動態加入 css</a>
+              <a href="/bucky0112.github.io/tags/%E5%8B%95%E6%85%8B%E5%8A%A0%E5%85%A5-class/" rel="tag"># 動態加入 class</a>
           </div>
 
         
@@ -356,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#visibility-與-display-的差異"><span class="nav-number">1.</span> <span class="nav-text">visibility 與 display 的差異</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#動態加入-CSS"><span class="nav-number">2.</span> <span class="nav-text">動態加入 CSS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#visibility-與-display-的差異"><span class="nav-number">1.</span> <span class="nav-text">visibility 與 display 的差異</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#動態加入-CSS"><span class="nav-number">2.</span> <span class="nav-text">動態加入 CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#動態加入-class"><span class="nav-number">3.</span> <span class="nav-text">動態加入 class</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -385,7 +404,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/bucky0112.github.io/tags/">
           
-        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-count">65</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
