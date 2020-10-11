@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://bucky0112.github.io/2020/10/12/vuex-actions-mutations/</loc>
+    
+    <lastmod>2020-10-11T16:11:29.840Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://bucky0112.github.io/2020/10/10/vuex-state/</loc>
     
     <lastmod>2020-10-10T14:08:55.364Z</lastmod>
