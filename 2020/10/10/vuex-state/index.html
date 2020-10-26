@@ -30,17 +30,18 @@
 <meta property="og:site_name" content="Bucky&#39;s f2e bucket">
 <meta property="og:description" content="在之前的專案中，如果碰到要資料傳遞的部份，例如是父子層關係的話，只要用 props 跟 emit 就可以解決了，而遇到同階層的關係，就用 $eventbus 來處理，不過這個方法只能處理比較簡單的資料，而且在 Vue 3 也不支援了。不怕，總是有技術可以解決問題，所以就從 state 開始來學學 Vuex 吧～">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/JY7TkcK.png">
 <meta property="og:image" content="https://i.imgur.com/RqaI0zQ.png">
 <meta property="og:image" content="https://i.imgur.com/eBAbVAd.png">
 <meta property="og:image" content="https://i.imgur.com/TMdDYi6.png">
 <meta property="article:published_time" content="2020-10-10T13:53:34.000Z">
-<meta property="article:modified_time" content="2020-10-10T14:08:55.364Z">
+<meta property="article:modified_time" content="2020-10-26T15:11:18.404Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="mapState">
 <meta property="article:tag" content="vuex">
 <meta property="article:tag" content="state">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/RqaI0zQ.png">
+<meta name="twitter:image" content="https://i.imgur.com/JY7TkcK.png">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/10/10/vuex-state/">
 
@@ -235,10 +236,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-10-10 21:53:34 / 修改時間：22:08:55" itemprop="dateCreated datePublished" datetime="2020-10-10T21:53:34+08:00">2020-10-10</time>
+              <time title="創建時間：2020-10-10 21:53:34" itemprop="dateCreated datePublished" datetime="2020-10-10T21:53:34+08:00">2020-10-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-10-26 23:11:18" itemprop="dateModified" datetime="2020-10-26T23:11:18+08:00">2020-10-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -263,6 +270,7 @@
         <p>在之前的專案中，如果碰到要資料傳遞的部份，例如是父子層關係的話，只要用 <code>props</code> 跟 <code>emit</code> 就可以解決了，而遇到同階層的關係，就用 <code>$eventbus</code> 來處理，不過這個方法只能處理比較簡單的資料，而且在 Vue 3 也不支援了。不怕，總是有技術可以解決問題，所以就從 state 開始來學學 Vuex 吧～</p>
 <a id="more"></a>
 
+<p><img src="https://i.imgur.com/JY7TkcK.png" alt="image-20201026231043927"></p>
 <h2 id="什麼是-Vuex？"><a href="#什麼是-Vuex？" class="headerlink" title="什麼是 Vuex？"></a>什麼是 Vuex？</h2><p>Vuex 是 Vue 官方開發的一種狀態管理模式，它的設計是把所有元件的狀態集中式管理，放在一個 <strong>store</strong> 裡面。<br>以下是 Vuex 的處理方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vuex</span><br><span class="line">state ----------&gt; 資料狀態，類似 component 中的 data</span><br><span class="line">actions ---------&gt; 跟 methods 一樣，進行非同步的行為及取得資料</span><br><span class="line">getter ---------&gt; 跟 computed 一樣，資料呈現的方式</span><br><span class="line">mutations -------&gt; 改變資料內容的方法</span><br></pre></td></tr></table></figure>
 
