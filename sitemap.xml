@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://bucky0112.github.io/2020/11/23/react-split-components/</loc>
+    
+    <lastmod>2020-11-23T16:14:29.042Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://bucky0112.github.io/2020/09/30/react-hook-usestate/</loc>
     
-    <lastmod>2020-10-26T15:16:38.562Z</lastmod>
+    <lastmod>2020-10-26T15:26:58.258Z</lastmod>
     
   </url>
   
