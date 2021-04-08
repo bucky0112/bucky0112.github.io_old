@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -256,12 +256,12 @@
 
       
         <p>以往自己在寫 CSS 時，多少會遇到想要寫某一個效果卻忘記怎麼開始，然後就需要上網找怎麼解決問題。當下雖然問題解決了，不過可能過沒多久，當遇到同樣問題時，又需要再去找解法，這時候 <strong>Mixin</strong> 就派上用場了。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="如何開始用-Mixin"><a href="#如何開始用-Mixin" class="headerlink" title="如何開始用 Mixin"></a>如何開始用 Mixin</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>Mixin 的用法我覺得有點像變數，只是差在變數只能給一個值，而 Mixin 則是把一個物件定義成一個變數，然後要用的時候再呼叫變數名稱就可以使用裡面的方法，就像下面的 CodePen：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="mixin demo" src="https://codepen.io/bucky0112/embed/NWNowvB?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/NWNowvB' target="_blank" rel="noopener">mixin demo</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/NWNowvB'>mixin demo</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定義一個 @mixin，並給它一個名稱</span></span><br><span class="line"><span class="keyword">@mixin</span> hide-text &#123;</span><br><span class="line">	<span class="attribute">text-indent</span>: <span class="number">110%</span>;</span><br><span class="line">	<span class="attribute">white-space</span>: nowrap;</span><br><span class="line">	<span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 要使用時，呼叫 @include 加上 mixin 名稱</span></span><br><span class="line"><span class="selector-class">.h1</span> &#123;</span><br><span class="line">	<span class="keyword">@include</span> hide-text</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -272,8 +272,8 @@
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以帶入參數來更靈活使用</span></span><br><span class="line"><span class="keyword">@mixin</span> p-style(<span class="variable">$p-size</span>, <span class="variable">$p-color</span>) &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="variable">$p-size</span>;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">2em</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$p-color</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.head</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> p-style(<span class="number">20px</span>, <span class="number">#677962</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> p-style(<span class="number">30px</span>, <span class="number">#933962</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="keyword">@include</span> p-style(<span class="number">10px</span>, <span class="number">#946809</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <iframe height="265" style="width: 100%;" scrolling="no" title="mixin demo2" src="https://codepen.io/bucky0112/embed/gOrqooE?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/gOrqooE' target="_blank" rel="noopener">mixin demo2</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/gOrqooE'>mixin demo2</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
     </div>
 
@@ -359,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何開始用-Mixin"><span class="nav-number">1.</span> <span class="nav-text">如何開始用 Mixin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#帶入參數的用法"><span class="nav-number">1.2.</span> <span class="nav-text">帶入參數的用法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%96%8B%E5%A7%8B%E7%94%A8-Mixin"><span class="nav-number">1.</span> <span class="nav-text">如何開始用 Mixin</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B6%E5%85%A5%E5%8F%83%E6%95%B8%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">帶入參數的用法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

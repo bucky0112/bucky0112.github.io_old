@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -259,7 +259,7 @@
 
       
         <p>上一篇已經初步了解 State，這篇繼續試著了解怎麼透過 Actions 跟 Mutations 來改變 State。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="Actions-跟-Mutations-如何改變資料"><a href="#Actions-跟-Mutations-如何改變資料" class="headerlink" title="Actions 跟 Mutations 如何改變資料"></a>Actions 跟 Mutations 如何改變資料</h2><p>先看官網的 Vuex 的週期介紹圖，如果 Component 要改變 State 的話，就要透過 Actions 發出 Commit 去呼叫 Mutations，藉由 Mutations 去改變 State。</p>
 <p><img src="https://i.imgur.com/J10wJPU.png" alt="vuex"></p>
@@ -272,13 +272,13 @@
    ></iframe>
 
 <p>首先在 State 中設立一筆資料</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  testWord: <span class="string">"Hello Vuex"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  testWord: <span class="string">&quot;Hello Vuex&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>接著就可以透過 Actions 跟 Mutations 來改變資料：</p>
 <ul>
 <li>在 Actions 及 Mutations 加入：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  CHANGE(state, word) &#123;</span><br><span class="line">    state.testWord = word;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">actions: &#123;</span><br><span class="line">  changeStateWord(context, word) &#123;</span><br><span class="line">    context.commit(<span class="string">"CHANGE"</span>, word);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  <span class="function"><span class="title">CHANGE</span>(<span class="params">state, word</span>)</span> &#123;</span><br><span class="line">    state.testWord = word;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">actions: &#123;</span><br><span class="line">  <span class="function"><span class="title">changeStateWord</span>(<span class="params">context, word</span>)</span> &#123;</span><br><span class="line">    context.commit(<span class="string">&quot;CHANGE&quot;</span>, word);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>在 actions 建立一個函式，並帶入 <code>context</code> 為第一個參數，第二個參數則是 <code>payload</code>，可以自定義名稱，而 <code>context</code> 則是有下列屬性：</li>
@@ -378,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Actions-跟-Mutations-如何改變資料"><span class="nav-number">1.</span> <span class="nav-text">Actions 跟 Mutations 如何改變資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用"><span class="nav-number">1.1.</span> <span class="nav-text">如何使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用嚴格模式"><span class="nav-number">2.</span> <span class="nav-text">使用嚴格模式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Actions-%E8%B7%9F-Mutations-%E5%A6%82%E4%BD%95%E6%94%B9%E8%AE%8A%E8%B3%87%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">Actions 跟 Mutations 如何改變資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">如何使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9A%B4%E6%A0%BC%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">使用嚴格模式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

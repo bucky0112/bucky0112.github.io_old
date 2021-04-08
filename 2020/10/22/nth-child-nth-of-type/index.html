@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -265,32 +265,32 @@
 
       
         <p>最近都在忙著面試，有些面試官人很好，如果有不懂的地方，他們會試著教你，所以我也藉由面試學到了蠻多東西（真的謝謝面試官大大）。 像是學到了 <code>:nth-child()</code> 跟 <code>:nth-of-type()</code> 這兩個的用法，回家也試著玩了一下，蠻有趣的，之後可以運用在 side-project 看看，這篇文章先來介紹這兩者的使用方法。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="蝦米是-pseudo-class？"><a href="#蝦米是-pseudo-class？" class="headerlink" title="蝦米是 pseudo-class？"></a>蝦米是 pseudo-class？</h2><p>pseudo-class，中文是<strong>偽類選取器</strong>，是 class 的一種，都是由一個冒號作為開頭，例如常見的 <code>:hover</code>。</p>
 <h2 id="nth-child-怎麼用？"><a href="#nth-child-怎麼用？" class="headerlink" title=":nth-child() 怎麼用？"></a>:nth-child() 怎麼用？</h2><p>不囉嗦，直接看用法</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="choose num 4" src="https://codepen.io/bucky0112/embed/zYBomwO?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/zYBomwO' target="_blank" rel="noopener">choose num 4</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/zYBomwO'>choose num 4</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>可以看到如果想要指定某個物件改變樣式的話，就可以使用 <code>:nth-child(n)</code>，數值從 1 開始算起，所以如果要選第 4 個，那就是輸入 4；如果要選擇 1、2、5 的話，就可以這樣寫：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child(1)</span>,</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child(2)</span>,</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child(5)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>),</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>),</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-pseudo">:nth-child</span>(<span class="number">5</span>) &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="選取奇數或偶數的用法"><a href="#選取奇數或偶數的用法" class="headerlink" title="選取奇數或偶數的用法"></a>選取奇數或偶數的用法</h3><p>如果你想把奇數欄位的 list 都改成紅色，而把偶數欄位的 list 都改成綠色的話，只要在括號中輸入關鍵字，<strong>奇數是 odd</strong>，而<strong>偶數是 even</strong>，就如同下方範例一樣：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="choose odd and even" src="https://codepen.io/bucky0112/embed/GRqNYQO?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/GRqNYQO' target="_blank" rel="noopener">choose odd and even</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/GRqNYQO'>choose odd and even</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
 
 <h3 id="間隔跳位選取的用法"><a href="#間隔跳位選取的用法" class="headerlink" title="間隔跳位選取的用法"></a>間隔跳位選取的用法</h3><p>如果你想嘗試類似迴圈的用法，例如每間隔 3 個就改變樣式，那麼就可以直接在括號中加入 <strong>3n</strong>，就可以做到每間隔 3 個就把 list 改成紅色了，例如下方例子：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="choose custom number" src="https://codepen.io/bucky0112/embed/NWrbENV?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/NWrbENV' target="_blank" rel="noopener">choose custom number</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/NWrbENV'>choose custom number</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>它在括號內的公式是 <code>An + B</code>，A 跟 B 是可以自訂的數值，+ 是可以變更的運算符號，而 n 則是由 0 開始的正整數，所以如果是 3n 的話，所得到的結果那就會是選取的物件，例如：</p>
@@ -298,29 +298,29 @@
 
 <p>所以也會有其他的變化式，例如想選擇 4 個裡面的第 3 個的話，那就是 4n+3，可以看下方例子：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="choose custom number" src="https://codepen.io/bucky0112/embed/bGeBQaX?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/bGeBQaX' target="_blank" rel="noopener">choose custom number</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/bGeBQaX'>choose custom number</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 
 
 <h2 id="nth-of-type-怎麼用？"><a href="#nth-of-type-怎麼用？" class="headerlink" title=":nth-of-type() 怎麼用？"></a>:nth-of-type() 怎麼用？</h2><p>跟 <code>:nth-child()</code> 差不多的用法，差別在於是<strong>會先將網頁中的物件先依標籤來分類，然後再做同類的順序選取</strong>，如果要指定某個物件改變樣式的話，就可以使用 <code>:nth-of-type(n)</code>，數值從 1 開始算起，所以如果要選第 4 個，那就是輸入 4，可以看下方範例：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="nth-of-type pick some" src="https://codepen.io/bucky0112/embed/PozWpNY?height=265&theme-id=dark&default-tab=html,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/PozWpNY' target="_blank" rel="noopener">nth-of-type pick some</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/PozWpNY'>nth-of-type pick some</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>所以當選取了 2、4、5 的物件時，代表選取了第 2、4、5 個 <code>&lt;h2&gt;</code> 和 <code>&lt;p&gt;</code>。</p>
 <h3 id="選取奇數或偶數的用法-1"><a href="#選取奇數或偶數的用法-1" class="headerlink" title="選取奇數或偶數的用法"></a>選取奇數或偶數的用法</h3><p>基本上也是跟 <code>:nth-child()</code> 差不多的用法，只要在括號中輸入關鍵字，<strong>奇數是 odd</strong>，而<strong>偶數是 even</strong>，就如同下方範例一樣：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="nth-of-type pick odd/even" src="https://codepen.io/bucky0112/embed/LYZxWrv?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/LYZxWrv' target="_blank" rel="noopener">nth-of-type pick odd/even</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/LYZxWrv'>nth-of-type pick odd/even</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <h3 id="間隔跳位選取的用法-1"><a href="#間隔跳位選取的用法-1" class="headerlink" title="間隔跳位選取的用法"></a>間隔跳位選取的用法</h3><p>一樣也有類似迴圈的用法，例如每間隔 3 個就改變樣式，那麼就可以直接在括號中加入 <strong>3n</strong>，就可以做到每間隔 3 個就把元素改成紅色了，例如下方例子：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="nth-of-type pick custom number" src="https://codepen.io/bucky0112/embed/jOryBdG?height=265&theme-id=dark&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/jOryBdG' target="_blank" rel="noopener">nth-of-type pick custom number</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/jOryBdG'>nth-of-type pick custom number</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
     </div>
 
@@ -409,7 +409,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#蝦米是-pseudo-class？"><span class="nav-number">1.</span> <span class="nav-text">蝦米是 pseudo-class？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nth-child-怎麼用？"><span class="nav-number">2.</span> <span class="nav-text">:nth-child() 怎麼用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#選取奇數或偶數的用法"><span class="nav-number">2.1.</span> <span class="nav-text">選取奇數或偶數的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#間隔跳位選取的用法"><span class="nav-number">2.2.</span> <span class="nav-text">間隔跳位選取的用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nth-of-type-怎麼用？"><span class="nav-number">3.</span> <span class="nav-text">:nth-of-type() 怎麼用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#選取奇數或偶數的用法-1"><span class="nav-number">3.1.</span> <span class="nav-text">選取奇數或偶數的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#間隔跳位選取的用法-1"><span class="nav-number">3.2.</span> <span class="nav-text">間隔跳位選取的用法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9D%A6%E7%B1%B3%E6%98%AF-pseudo-class%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">蝦米是 pseudo-class？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nth-child-%E6%80%8E%E9%BA%BC%E7%94%A8%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">:nth-child() 怎麼用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%B8%E5%8F%96%E5%A5%87%E6%95%B8%E6%88%96%E5%81%B6%E6%95%B8%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">選取奇數或偶數的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%93%E9%9A%94%E8%B7%B3%E4%BD%8D%E9%81%B8%E5%8F%96%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">間隔跳位選取的用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nth-of-type-%E6%80%8E%E9%BA%BC%E7%94%A8%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">:nth-of-type() 怎麼用？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%B8%E5%8F%96%E5%A5%87%E6%95%B8%E6%88%96%E5%81%B6%E6%95%B8%E7%9A%84%E7%94%A8%E6%B3%95-1"><span class="nav-number">3.1.</span> <span class="nav-text">選取奇數或偶數的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%93%E9%9A%94%E8%B7%B3%E4%BD%8D%E9%81%B8%E5%8F%96%E7%9A%84%E7%94%A8%E6%B3%95-1"><span class="nav-number">3.2.</span> <span class="nav-text">間隔跳位選取的用法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

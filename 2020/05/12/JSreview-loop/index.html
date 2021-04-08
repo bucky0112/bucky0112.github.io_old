@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -35,6 +35,8 @@
 <meta property="article:published_time" content="2020-05-12T08:56:29.000Z">
 <meta property="article:modified_time" content="2020-05-16T03:10:39.473Z">
 <meta property="article:author" content="Bucky Chu">
+<meta property="article:tag" content="w3HexSchool">
+<meta property="article:tag" content="javascript">
 <meta property="article:tag" content="迴圈">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/BZlPcjz.png">
@@ -264,7 +266,7 @@
 
       
         <p>迴圈 (Loop) 在 JavaScript 中，當遇到需要重複做某件事時，是個非常好用的方法。而迴圈又分為幾種不同的方式，本篇將會介紹如何使用比較常見的作法。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="迴圈"><a href="#迴圈" class="headerlink" title="迴圈"></a>迴圈</h2><hr>
 <p>如果一件重要的事，想要說三次的話，可能會這樣表達：</p>
@@ -275,7 +277,7 @@
 <p>for 迴圈的用法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var i;</span><br><span class="line"></span><br><span class="line">for () &#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<p>{ }中，要重複一直做的事情，例如：<br><code>{console.log(&#39;很重要&#39;)}</code></p>
+<p>{ }中，要重複一直做的事情，例如：<br><code>&#123;console.log(&#39;很重要&#39;)&#125;</code></p>
 <p>( )中，要從哪裏開始，到那裏結束，還有每回合會做什麼事情，例如：<br><code>for (i = 0; i &lt; 3; i++)</code><br>上面那段的意思是：i 從 0 開始計算；到 3 的時候結束；i + 1<br>寫出來就是這樣：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var i</span><br><span class="line">for (i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(&#39;很重要&#39;)</span><br><span class="line">&#125;  &#x2F;&#x2F; &quot;很重要&quot; &quot;很重要&quot; &quot;很重要&quot;</span><br></pre></td></tr></table></figure>
 
@@ -306,7 +308,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var alliphonelength &#x3D; alliphone11.length;</span><br><span class="line"></span><br><span class="line">for(var i&#x3D;0; i&lt;alliphonelength; i++) &#123;</span><br><span class="line">  if(alliphone11[i].price &gt; 30000) &#123;</span><br><span class="line">    console.log(alliphone11[i].name + &#39;的價格超過 3 萬&#39;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; &quot;iPhone 11 Pro的價格超過 3 萬&quot;</span><br><span class="line">&#x2F;&#x2F; &quot;iPhone 11 ProMax的價格超過 3 萬&quot;</span><br></pre></td></tr></table></figure>
 
 <h3 id="break-與-continue"><a href="#break-與-continue" class="headerlink" title="break 與 continue"></a>break 與 continue</h3><p>如果在迴圈中，想要提早離開或是跳過其中幾項的話，這時候就可以使用 break 或是 continue。</p>
-<p>來看看最近熱門的動物森友會範例，今天如果身上一堆大頭菜想賣的話，可以去 <a href="https://ac-room.cc/" target="_blank" rel="noopener">在線等! 動森揪團工具</a> <del>我賣菜都來這裏</del>，島主都會打上目前菜價多少，要多少張機票一趟。</p>
+<p>來看看最近熱門的動物森友會範例，今天如果身上一堆大頭菜想賣的話，可以去 <a target="_blank" rel="noopener" href="https://ac-room.cc/">在線等! 動森揪團工具</a> <del>我賣菜都來這裏</del>，島主都會打上目前菜價多少，要多少張機票一趟。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var turnipExchange &#x3D; [</span><br><span class="line">  &#123;</span><br><span class="line">    name: &#39;莫妮卡&#39;,</span><br><span class="line">    sell: 540,</span><br><span class="line">    tripTicket: 2 </span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  &#123;</span><br><span class="line">    name: &#39;小潤&#39;,</span><br><span class="line">    sell: 640,</span><br><span class="line">    tripTicket: 4 </span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  &#123;</span><br><span class="line">    name: &#39;傑克&#39;,</span><br><span class="line">    sell: 600,</span><br><span class="line">    tripTicket: 3 </span><br><span class="line">  &#125;,</span><br><span class="line">  </span><br><span class="line">  &#123;</span><br><span class="line">    name: &#39;阿保&#39;,</span><br><span class="line">    sell: 560,</span><br><span class="line">    tripTicket: 2</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
 <p>那麼我們可以來設條件，如果找到符合菜價 550 以上，機票 3 張就可以賣，就不用繼續找下去了。</p>
@@ -339,8 +341,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/bucky0112.github.io/tags/javascript/" rel="tag"># javascript</a>
               <a href="/bucky0112.github.io/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+              <a href="/bucky0112.github.io/tags/javascript/" rel="tag"># javascript</a>
               <a href="/bucky0112.github.io/tags/%E8%BF%B4%E5%9C%88/" rel="tag"># 迴圈</a>
           </div>
 
@@ -416,7 +418,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#迴圈"><span class="nav-number">1.</span> <span class="nav-text">迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-迴圈"><span class="nav-number">2.</span> <span class="nav-text">for 迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-迴圈"><span class="nav-number">3.</span> <span class="nav-text">while 迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-的運用"><span class="nav-number">4.</span> <span class="nav-text">for 的運用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-加總"><span class="nav-number">4.1.</span> <span class="nav-text">for - 加總</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-加上判斷式的運用"><span class="nav-number">4.2.</span> <span class="nav-text">for 加上判斷式的運用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-與-continue"><span class="nav-number">4.3.</span> <span class="nav-text">break 與 continue</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%B4%E5%9C%88"><span class="nav-number">1.</span> <span class="nav-text">迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-%E8%BF%B4%E5%9C%88"><span class="nav-number">2.</span> <span class="nav-text">for 迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-%E8%BF%B4%E5%9C%88"><span class="nav-number">3.</span> <span class="nav-text">while 迴圈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-%E7%9A%84%E9%81%8B%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">for 的運用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%E5%8A%A0%E7%B8%BD"><span class="nav-number">4.1.</span> <span class="nav-text">for - 加總</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%E5%8A%A0%E4%B8%8A%E5%88%A4%E6%96%B7%E5%BC%8F%E7%9A%84%E9%81%8B%E7%94%A8"><span class="nav-number">4.2.</span> <span class="nav-text">for 加上判斷式的運用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#break-%E8%88%87-continue"><span class="nav-number">4.3.</span> <span class="nav-text">break 與 continue</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

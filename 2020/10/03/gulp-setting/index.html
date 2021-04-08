@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -256,14 +256,14 @@
 
       
         <p>安裝 Gulp 完之後，接著可以開始基本的設置。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="開始設定並測試："><a href="#開始設定並測試：" class="headerlink" title="開始設定並測試："></a>開始設定並測試：</h2><ol>
 <li>在根目錄下建立一個 gulpfile.js</li>
 <li>建立一個 source 的資料夾，並在裡面新增一個 index.html</li>
 <li>在 gulpfile.js 裡面輸入：</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'copyHTML'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./source/**/*.html'</span>)</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./public/'</span>))</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 做的動作意思是引入 gulp，並用 task 來執行函式，將 source 裡面所有 .html 複製到 public 資料夾中</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> gulp = <span class="built_in">require</span>(<span class="string">&#x27;gulp&#x27;</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">&#x27;copyHTML&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> gulp.src(<span class="string">&#x27;./source/**/*.html&#x27;</span>)</span><br><span class="line">    .pipe(gulp.dest(<span class="string">&#x27;./public/&#x27;</span>))</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 做的動作意思是引入 gulp，並用 task 來執行函式，將 source 裡面所有 .html 複製到 public 資料夾中</span></span><br></pre></td></tr></table></figure>
 
 <ol start="4">
 <li>在終端機輸入指令：<code>gulp copyHTML</code>，就會在 public 資料夾中 copy 一個 index.html 出來。</li>
@@ -354,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#開始設定並測試："><span class="nav-number">1.</span> <span class="nav-text">開始設定並測試：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#後記"><span class="nav-number">2.</span> <span class="nav-text">後記</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E8%A8%AD%E5%AE%9A%E4%B8%A6%E6%B8%AC%E8%A9%A6%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">開始設定並測試：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%8C%E8%A8%98"><span class="nav-number">2.</span> <span class="nav-text">後記</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

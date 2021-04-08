@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -34,7 +34,6 @@
 <meta property="article:modified_time" content="2020-04-29T09:06:10.238Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="javascript">
-<meta property="article:tag" content="JavaScript 全攻略：克服 JS 的奇怪部分">
 <meta property="article:tag" content="hoisting">
 <meta name="twitter:card" content="summary">
 
@@ -263,7 +262,7 @@
 
       
         <p>在 JavaScript 中，提升（Hoisting）可能是最奇怪的部份了，這個部份還滿容易搞混的，不過希望我整理出來的筆記能夠幫助釐清觀念，如果有錯的部分麻煩請告知我。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>首先看一段程式碼，然後看會發生什麼事：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; &#39;Hello World&#39;;</span><br><span class="line"></span><br><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line">b()</span><br></pre></td></tr></table></figure>

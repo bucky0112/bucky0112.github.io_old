@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -33,7 +33,6 @@
 <meta property="article:published_time" content="2020-09-22T14:40:59.000Z">
 <meta property="article:modified_time" content="2020-09-22T14:47:21.805Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="sass">
 <meta property="article:tag" content="scss">
 <meta property="article:tag" content="import">
 <meta name="twitter:card" content="summary">
@@ -257,14 +256,14 @@
 
       
         <p>在以往單純使用 CSS 的開發經驗中，總是會使用一支 CSS 檔案來設計所有的樣式，但是這樣的缺點是之後的維護相當困難，要找一個樣式的 code 可能要找很久。之前在寫 Vue 專案的時候，覺得元件式的管理很棒，所有元件分離讓之後的管理變得容易很多，現在才發現原來 SCSS 也可以做類似的事情，感覺好用很多啊～</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="變數管理"><a href="#變數管理" class="headerlink" title="變數管理"></a>變數管理</h2><p>這個方法在我上次的專案中， 在我自定義 BootstrapVue 的顏色時有用到。而在 SCSS 中的作法也是差不多，假設目前有一支 .scss 檔案，已經有設定顏色的變數，想要讓變數分割成一支獨立的檔案來管理的話，做兩步驟就可以成功使用 import 來管理：</p>
 <ol>
 <li>新增一支 <code>_variable.scss</code>，裡面放變數的設定。</li>
 <li>在主要 .scss 檔中 import 檔案：<code>@import &quot;variable&quot;;</code></li>
 </ol>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// all.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">"variable"</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banner-title</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">460px</span>;</span><br><span class="line">    <span class="attribute">background</span>: lighten(<span class="variable">$danger</span>, <span class="number">20%</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$white</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.main-menu</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// all.scss</span></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;variable&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banner-title</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">460px</span>;</span><br><span class="line">    <span class="attribute">background</span>: lighten(<span class="variable">$danger</span>, <span class="number">20%</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$white</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.main-menu</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="variable">$danger</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// _variable.scss</span></span><br><span class="line"><span class="variable">$danger</span>: <span class="number">#ff0000</span>;</span><br><span class="line"><span class="variable">$white</span>: <span class="number">#fff</span>;</span><br></pre></td></tr></table></figure>
 
@@ -359,7 +358,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#變數管理"><span class="nav-number">1.</span> <span class="nav-text">變數管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分離式管理-SCSS"><span class="nav-number">2.</span> <span class="nav-text">分離式管理 SCSS</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">變數管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%9B%A2%E5%BC%8F%E7%AE%A1%E7%90%86-SCSS"><span class="nav-number">2.</span> <span class="nav-text">分離式管理 SCSS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

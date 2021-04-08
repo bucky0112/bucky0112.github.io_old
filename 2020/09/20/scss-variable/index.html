@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -33,11 +33,9 @@
 <meta property="article:published_time" content="2020-09-20T12:23:38.000Z">
 <meta property="article:modified_time" content="2020-09-20T12:29:22.264Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="sass">
 <meta property="article:tag" content="scss">
+<meta property="article:tag" content="sass">
 <meta property="article:tag" content="variable">
-<meta property="article:tag" content="darken">
-<meta property="article:tag" content="lighten">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/09/20/scss-variable/">
@@ -259,27 +257,27 @@
 
       
         <p>說來慚愧，立志成為一名前端工程師的我，只會純 CSS 跟框架來幫網頁做樣式，對於 SASS 這個好用的語言工具卻是知道的不多，所以想趁有時間來學一下 SASS，就開了這個學習筆記系列。</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<h2 id="何謂-SASS？"><a href="#何謂-SASS？" class="headerlink" title="何謂 SASS？"></a>何謂 SASS？</h2><p>根據<a href="https://zh.wikipedia.org/wiki/Sass" target="_blank" rel="noopener">維基百科中</a>介紹，SASS 全名為 <strong>S</strong>yntactically <strong>A</strong>wesome <strong>S</strong>tyle<strong>s</strong>heets，是一個將指令碼解析成 CSS 的手稿語言，也就是 SassScript。SASS 有兩種語法，一種是 SASS，另一種是 SCSS，那麼兩種有什麼差別呢？</p>
+<h2 id="何謂-SASS？"><a href="#何謂-SASS？" class="headerlink" title="何謂 SASS？"></a>何謂 SASS？</h2><p>根據<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Sass">維基百科中</a>介紹，SASS 全名為 <strong>S</strong>yntactically <strong>A</strong>wesome <strong>S</strong>tyle<strong>s</strong>heets，是一個將指令碼解析成 CSS 的手稿語言，也就是 SassScript。SASS 有兩種語法，一種是 SASS，另一種是 SCSS，那麼兩種有什麼差別呢？</p>
 <p>這是 SCSS 的寫法：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="scss sample" src="https://codepen.io/bucky0112/embed/OJNBqGK?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/OJNBqGK' target="_blank" rel="noopener">scss sample</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/OJNBqGK'>scss sample</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>這是 SASS 的寫法：</p>
 <iframe height="280" style="width: 100%;" scrolling="no" title="sass sample" src="https://codepen.io/bucky0112/embed/XWdxGwe?height=280&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/XWdxGwe' target="_blank" rel="noopener">sass sample</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/XWdxGwe'>sass sample</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>跟普通的 CSS 相比，SCSS 是相對好入門的寫法，在相同架構下，例如 li 就可以寫在 ul 中，而且寫法差不多；而 SASS 看起來架構也一樣，差別在於完全沒有大括號跟分號，感覺很適合懶人的寫法。<br>不過我似乎很少看到有人使用 SASS，也許是我孤陋寡聞，看的東西不夠多qq。所以為了避免未來協作實務上的困難，所以我之後的實用還是會以 SCSS 為主。</p>
 <h2 id="變數運用"><a href="#變數運用" class="headerlink" title="變數運用"></a>變數運用</h2><p>前面稍微簡單介紹一下 SCSS 語法之間的差異，這裡就要來講一下 SCSS 好用的地方 - <strong>變數</strong>。</p>
 <p>在寫 CSS 時，有時候會遇到文字或是區塊共用同樣的顏色，例如下方例子：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="same color" src="https://codepen.io/bucky0112/embed/JjXmVjZ?height=265&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/JjXmVjZ' target="_blank" rel="noopener">same color</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/JjXmVjZ'>same color</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>如果遇到需要改變顏色的需求時，可能就得要一個一個更換。<br>不過在 SCSS 就可以運用到變數的概念，設定變數也很簡單，一個錢字符號加上變數的名稱，後面設定想要的效果，例如：</p>
@@ -290,7 +288,7 @@
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 設定一個基準</span></span><br><span class="line"><span class="variable">$font-m</span>: <span class="number">20px</span>;</span><br><span class="line"><span class="comment">// 將基準 * 2</span></span><br><span class="line"><span class="variable">$font-l</span>: <span class="variable">$font-m</span> * <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="variable">$font-l</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="variable">$font-m</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="字串運用"><a href="#字串運用" class="headerlink" title="字串運用"></a>字串運用</h2><p>變數在 SCSS 中也可以做一般程式語言字串的使用，例如：</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(<span class="string">'https://fonts.googleapis.com/css2?family=Kufam&amp;display=swap'</span>);</span><br><span class="line"><span class="variable">$font-family-base</span>: <span class="string">'Kufam'</span>, cursive;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="variable">$font-family-base</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="variable">$font-family-base</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(<span class="string">&#x27;https://fonts.googleapis.com/css2?family=Kufam&amp;display=swap&#x27;</span>);</span><br><span class="line"><span class="variable">$font-family-base</span>: <span class="string">&#x27;Kufam&#x27;</span>, cursive;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="variable">$font-family-base</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="variable">$font-family-base</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="透過-darken、lighten-來調顏色"><a href="#透過-darken、lighten-來調顏色" class="headerlink" title="透過 darken、lighten 來調顏色"></a>透過 darken、lighten 來調顏色</h2><p>darken、lighten 是 SCSS 內建的功能，可以用來微調顏色，是一個非常有趣的功能，使用方法是 <code>darken(orange, 10%);</code>，這樣就可以將 orange 的顏色調深 10%，反之 lighten 就是調淺，例如：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$bg-red</span>: red;</span><br><span class="line"><span class="variable">$bg-green</span>: green;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: lighten(<span class="variable">$bg-red</span>, <span class="number">30%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: darken(<span class="variable">$bg-green</span>, <span class="number">10%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: darken(orange, <span class="number">10%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#何謂-SASS？"><span class="nav-number">1.</span> <span class="nav-text">何謂 SASS？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#變數運用"><span class="nav-number">2.</span> <span class="nav-text">變數運用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCSS-變數做加減乘除好方便"><span class="nav-number">3.</span> <span class="nav-text">SCSS 變數做加減乘除好方便</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字串運用"><span class="nav-number">4.</span> <span class="nav-text">字串運用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#透過-darken、lighten-來調顏色"><span class="nav-number">5.</span> <span class="nav-text">透過 darken、lighten 來調顏色</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%95%E8%AC%82-SASS%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">何謂 SASS？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%8A%E6%95%B8%E9%81%8B%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">變數運用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCSS-%E8%AE%8A%E6%95%B8%E5%81%9A%E5%8A%A0%E6%B8%9B%E4%B9%98%E9%99%A4%E5%A5%BD%E6%96%B9%E4%BE%BF"><span class="nav-number">3.</span> <span class="nav-text">SCSS 變數做加減乘除好方便</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%B8%B2%E9%81%8B%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">字串運用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%8F%E9%81%8E-darken%E3%80%81lighten-%E4%BE%86%E8%AA%BF%E9%A1%8F%E8%89%B2"><span class="nav-number">5.</span> <span class="nav-text">透過 darken、lighten 來調顏色</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

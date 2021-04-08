@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -34,8 +34,8 @@
 <meta property="article:modified_time" content="2020-09-27T14:20:17.173Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="react">
-<meta property="article:tag" content="jsx">
 <meta property="article:tag" content="css">
+<meta property="article:tag" content="jsx">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/09/27/react-jsx-css-style/">
@@ -257,16 +257,16 @@
 
       
         <p>在 React 中，什麼東西都可以直接寫在 JavaScript 裡面，就連 CSS 樣式也可以，雖然有點奇怪，不過我在 Vue 也是會這樣寫 inline-style 的，只是 Vue 還會寫在 template 中，而 React 則是寫在 JSX 裡面。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="把-CSS-樣式變成物件寫法？"><a href="#把-CSS-樣式變成物件寫法？" class="headerlink" title="把 CSS 樣式變成物件寫法？"></a>把 CSS 樣式變成物件寫法？</h2><p>目前的理解是，感覺什麼都可以寫成變數來操作，就連 CSS 樣式也可以。<br>我寫了一個點擊器範例：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="React count demo" src="https://codepen.io/bucky0112/embed/QWNoYXg?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/QWNoYXg' target="_blank" rel="noopener">React count demo</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/QWNoYXg'>React count demo</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>接著試著把 CSS 樣式寫成物件，寫法是這樣：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定義一個 style變數</span></span><br><span class="line"><span class="keyword">const</span> numStyle = &#123;</span><br><span class="line">  margin: <span class="string">'0 50px 0 50px'</span>, <span class="comment">// 如果不是純數字，就要用字串格式</span></span><br><span class="line">  color: <span class="string">'#EE6464'</span>, </span><br><span class="line">  fontSize: <span class="number">60</span>, <span class="comment">// 加 px 就要使用字串，這裡 px 可用可不用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定義一個 style變數</span></span><br><span class="line"><span class="keyword">const</span> numStyle = &#123;</span><br><span class="line">  margin: <span class="string">&#x27;0 50px 0 50px&#x27;</span>, <span class="comment">// 如果不是純數字，就要用字串格式</span></span><br><span class="line">  color: <span class="string">&#x27;#EE6464&#x27;</span>, </span><br><span class="line">  fontSize: <span class="number">60</span>, <span class="comment">// 加 px 就要使用字串，這裡 px 可用可不用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>要注意的地方：</p>
 <ol>
@@ -274,13 +274,13 @@
 <li>每一個屬性都要是小駝峰，例如 <code>font-size</code> 就要寫成 <code>fontSize</code>。</li>
 </ol>
 <p>接著把它寫進 JSX 中，用一個大括號把變數名稱包起來就可以了：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">"num"</span> style=&#123; numStyle &#125;&gt;<span class="number">0</span>&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;num&quot;</span> style=&#123; numStyle &#125;&gt;<span class="number">0</span>&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="CSS-樣式的另一種寫法"><a href="#CSS-樣式的另一種寫法" class="headerlink" title="CSS 樣式的另一種寫法"></a>CSS 樣式的另一種寫法</h2><p>如果一個 CSS 樣式蠻多的話，寫成一個物件是蠻方便的，還可以一直加設定進去，但是如果沒有很多的話，或是想要邊寫邊加的話，也是可以直接寫成 inline-style，例如：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.plus</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#ffff</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.plus</span> &#123;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">	<span class="attribute">color</span>: <span class="number">#fff</span>f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>寫成這樣：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">"plus"</span> style=&#123;&#123; <span class="attr">fontSize</span>: <span class="number">60</span>, <span class="attr">color</span>: <span class="string">'#ffff'</span> &#125;&#125;&gt;+&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div className=<span class="string">&quot;plus&quot;</span> style=&#123;&#123; <span class="attr">fontSize</span>: <span class="number">60</span>, <span class="attr">color</span>: <span class="string">&#x27;#ffff&#x27;</span> &#125;&#125;&gt;+&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 <p>寫法變成 Vue 的 template 了！？<br>其實只是在 JSX 的 CSS 樣式裡加上一個物件而已，還蠻直覺的，很有趣。</p>
 
@@ -369,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#把-CSS-樣式變成物件寫法？"><span class="nav-number">1.</span> <span class="nav-text">把 CSS 樣式變成物件寫法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-樣式的另一種寫法"><span class="nav-number">2.</span> <span class="nav-text">CSS 樣式的另一種寫法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A-CSS-%E6%A8%A3%E5%BC%8F%E8%AE%8A%E6%88%90%E7%89%A9%E4%BB%B6%E5%AF%AB%E6%B3%95%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">把 CSS 樣式變成物件寫法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-%E6%A8%A3%E5%BC%8F%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A8%AE%E5%AF%AB%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">CSS 樣式的另一種寫法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

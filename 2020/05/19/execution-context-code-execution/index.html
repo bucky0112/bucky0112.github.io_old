@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -34,7 +34,7 @@
 <meta property="article:modified_time" content="2020-05-19T15:04:58.526Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="javascript">
-<meta property="article:tag" content="JavaScript 全攻略：克服 JS 的奇怪部分">
+<meta property="article:tag" content="程式執行">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/05/19/execution-context-code-execution/">
@@ -261,11 +261,11 @@
 <li>第二階段則是執行。</li>
 </ol>
 <p>而這篇文章則會提到執行的部份。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>當在創造階段時，都已經設定好所有東西，到執行這個階段就很單純，只是逐行執行自己寫好的程式碼而已。進行編譯跟轉換後，讓電腦看得懂，這樣就結束了。</p>
 <p>不免俗的來看一下程式碼，當執行以下的程式碼後，會如何運作呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b();            </span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">var a &#x3D; &#39;Hello&#39;;</span><br><span class="line"></span><br><span class="line">console.log(a)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function b() &#123;</span><br><span class="line">  console.log(&#39;Test&#39;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b();            </span><br><span class="line"></span><br><span class="line">console.log(a);</span><br><span class="line"></span><br><span class="line">var a &#x3D; &#39;Hello&#39;;</span><br><span class="line"></span><br><span class="line">console.log(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>首先呼叫 b()，沒有什麼問題，會執行 function 內的程式碼，印出 ‘Test’。</p>
 <p>第一個 <code>console.log(a)</code>，由於在創造階段時，先給 a 一個 undefined，然後執行，所以就印出 undefined。</p>

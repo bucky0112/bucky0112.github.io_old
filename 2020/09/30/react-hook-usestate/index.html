@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -265,10 +265,10 @@
 
       
         <p>前面提到當變數更新時，React 還不知道資料有更新。所以 React 提供了一個方法來監控而且管理資料，而這就是 React 的 Hooks 之一 - <strong>useState</strong>。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p><img src="https://i.imgur.com/OqnGEog.png" alt="image-20201026231623174"></p>
-<h2 id="什麼是-State"><a href="#什麼是-State" class="headerlink" title="什麼是 State"></a>什麼是 State</h2><p>首先要先來了解 State 是什麼，才能 use 它。<br>根據 <a href="https://zh-hant.reactjs.org/docs/state-and-lifecycle.html" target="_blank" rel="noopener">React 官網</a>說到，State 類似 props，不過差別在於 State 是由 Component 私有控制的。可以把它當成是資料，<br>假設一個資料有兩種狀態，true 或 false，預設狀態是 false，當你使用它時，就會變成 true，這種狀態就是 state。</p>
+<h2 id="什麼是-State"><a href="#什麼是-State" class="headerlink" title="什麼是 State"></a>什麼是 State</h2><p>首先要先來了解 State 是什麼，才能 use 它。<br>根據 <a target="_blank" rel="noopener" href="https://zh-hant.reactjs.org/docs/state-and-lifecycle.html">React 官網</a>說到，State 類似 props，不過差別在於 State 是由 Component 私有控制的。可以把它當成是資料，<br>假設一個資料有兩種狀態，true 或 false，預設狀態是 false，當你使用它時，就會變成 true，這種狀態就是 state。</p>
 <h2 id="來試著使用-State-Hook-吧"><a href="#來試著使用-State-Hook-吧" class="headerlink" title="來試著使用 State Hook 吧"></a>來試著使用 State Hook 吧</h2><p>先來簡單瞭解一下什麼是 Hook：</p>
 <blockquote>
 <p><em>Hook</em> 是 React 16.8 中增加的新功能。它讓你不必寫 class 就能使用 state 以及其他 React 的功能。 (來自 React 官網的解釋)</p>
@@ -276,8 +276,8 @@
 <p>簡單來說 Hook 就是 React 中各項特殊 function，而本篇則是會介紹 <strong>useState</strong> 的用法。</p>
 <h2 id="開始使用-useState"><a href="#開始使用-useState" class="headerlink" title="開始使用 useState"></a>開始使用 useState</h2><p>下方有一個 Component，來試著使用 useState 改動畫面。</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="React Component" src="https://codepen.io/bucky0112/embed/JjXVMEK?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/JjXVMEK' target="_blank" rel="noopener">React Component</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/JjXVMEK'>React Component</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <ol>
@@ -297,8 +297,8 @@
 </ol>
 <p>完整的點擊器範例就完成了</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="React useState" src="https://codepen.io/bucky0112/embed/GRZaZEz?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/GRZaZEz' target="_blank" rel="noopener">React useState</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/GRZaZEz'>React useState</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <h2 id="useState-做了什麼？"><a href="#useState-做了什麼？" class="headerlink" title="useState 做了什麼？"></a>useState 做了什麼？</h2><p>我們透過 useState 建立一個<strong>需要被即時監控的資料變數</strong>，在這個範例中也就是 count，並呼叫了它提供的更新變數的函式來改變數值。<br>如果變數的值有變化，也確實有呼叫 setCount 的話，那麼 React 就會以資料驅動畫面更新，這就是 useState 幫我們做的事情。</p>
@@ -388,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是-State"><span class="nav-number">1.</span> <span class="nav-text">什麼是 State</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#來試著使用-State-Hook-吧"><span class="nav-number">2.</span> <span class="nav-text">來試著使用 State Hook 吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#開始使用-useState"><span class="nav-number">3.</span> <span class="nav-text">開始使用 useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useState-做了什麼？"><span class="nav-number">4.</span> <span class="nav-text">useState 做了什麼？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-State"><span class="nav-number">1.</span> <span class="nav-text">什麼是 State</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%86%E8%A9%A6%E8%91%97%E4%BD%BF%E7%94%A8-State-Hook-%E5%90%A7"><span class="nav-number">2.</span> <span class="nav-text">來試著使用 State Hook 吧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E5%A7%8B%E4%BD%BF%E7%94%A8-useState"><span class="nav-number">3.</span> <span class="nav-text">開始使用 useState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#useState-%E5%81%9A%E4%BA%86%E4%BB%80%E9%BA%BC%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">useState 做了什麼？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

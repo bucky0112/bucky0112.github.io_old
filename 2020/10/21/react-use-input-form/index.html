@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -34,9 +34,9 @@
 <meta property="article:modified_time" content="2020-10-21T15:29:17.476Z">
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="react">
+<meta property="article:tag" content="hook">
 <meta property="article:tag" content="form">
 <meta property="article:tag" content="usestate">
-<meta property="article:tag" content="hook">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/10/21/react-use-input-form/">
@@ -258,12 +258,12 @@
 
       
         <p>在 Vue 中使用 v-model 來做表單輸入時非常好用，那麼在 React 中可以怎麼運用呢？本篇文章將會介紹該怎麼利用 Hook 來做類似的效果。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="利用-useState-綁定數值"><a href="#利用-useState-綁定數值" class="headerlink" title="利用 useState 綁定數值"></a>利用 <strong>useState</strong> 綁定數值</h2><p>首先，先看一下完成的程式：</p>
 <iframe height="265" style="width: 100%;" scrolling="no" title="React 的表單輸入運用" src="https://codepen.io/bucky0112/embed/BazQBQr?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/bucky0112/pen/BazQBQr' target="_blank" rel="noopener">React 的表單輸入運用</a> by Bucky Chu
-  (<a href='https://codepen.io/bucky0112' target="_blank" rel="noopener">@bucky0112</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/bucky0112/pen/BazQBQr'>React 的表單輸入運用</a> by Bucky Chu
+  (<a target="_blank" rel="noopener" href='https://codepen.io/bucky0112'>@bucky0112</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
 </iframe>
 
 <p>當輸入數字時，另一個顯示的欄位就會即時顯示輸入的數字，那麼就一步一步地來看是如何做出來的。</p>
@@ -272,7 +272,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; useState &#125; = React;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用 useState 方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [state, '改變 state 的方法'] = useState(預設值)</span></span><br><span class="line"><span class="keyword">const</span> [inputNum, setInputNum] = useState(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// [state, &#x27;改變 state 的方法&#x27;] = useState(預設值)</span></span><br><span class="line"><span class="keyword">const</span> [inputNum, setInputNum] = useState(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>定義事件處理器</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 React 中，一般會使用 handle 開頭命名事件處理器</span></span><br><span class="line"><span class="keyword">const</span> handleInputNum = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; value &#125; = e.target; <span class="comment">// 透過 e.target.value 取出輸入內容</span></span><br><span class="line">  setInputNum(value); <span class="comment">// 再經由 setInputNum 即時更新 inputNum 的 state</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -287,7 +287,7 @@
 
 </li>
 </ol>
-<p>以上就是利用 useState 這個 hook 來運用表單的例子，當然也可以做其他的運用，例如在 <code>value={inputNum * 2}</code> 做乘 2 倍的運算。</p>
+<p>以上就是利用 useState 這個 hook 來運用表單的例子，當然也可以做其他的運用，例如在 <code>value=&#123;inputNum * 2&#125;</code> 做乘 2 倍的運算。</p>
 
     </div>
 
@@ -375,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-useState-綁定數值"><span class="nav-number">1.</span> <span class="nav-text">利用 useState 綁定數值</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A9%E7%94%A8-useState-%E7%B6%81%E5%AE%9A%E6%95%B8%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">利用 useState 綁定數值</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

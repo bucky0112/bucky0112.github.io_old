@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -35,7 +35,6 @@
 <meta property="article:author" content="Bucky Chu">
 <meta property="article:tag" content="先別急著寫 leetcode">
 <meta property="article:tag" content="pseudo code">
-<meta property="article:tag" content="如何印出 1-100 的偶數">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://bucky0112.github.io/2020/04/03/Think%20first,%20code%20later/">
@@ -262,9 +261,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>以前看過一篇文章，是用拉麵店販賣機講解關於 api 的概念，我覺得作者很厲害，可以用淺顯易懂的方式讓當時還是前端麻瓜的我看得懂，那篇文章很推薦新手去看 -&gt; <a href="https://medium.com/@hulitw/ramen-and-api-6238437dc544" target="_blank" rel="noopener">從拉麵店的販賣機理解什麼是 API</a></p>
-<p>最近作者開了一系列的課 -&gt; <a href="https://lidemy.com/p/alg101-leetcode" target="_blank" rel="noopener">先別急著寫 leetcode</a>。因為我不是本科系出身，所以確實在解題時很容易遇上困難，不然就是會想很久。剛好看到這個課程就覺得蠻需要培養如何寫程式的思維，而且重點是免費喔！免費喔！免費喔！（很重要要說 3 次）所以這個系列會記載一些對我有幫助的筆記，希望能讓自己更進步一些。</p>
-<a id="more"></a>
+        <p>以前看過一篇文章，是用拉麵店販賣機講解關於 api 的概念，我覺得作者很厲害，可以用淺顯易懂的方式讓當時還是前端麻瓜的我看得懂，那篇文章很推薦新手去看 -&gt; <a target="_blank" rel="noopener" href="https://medium.com/@hulitw/ramen-and-api-6238437dc544">從拉麵店的販賣機理解什麼是 API</a></p>
+<p>最近作者開了一系列的課 -&gt; <a target="_blank" rel="noopener" href="https://lidemy.com/p/alg101-leetcode">先別急著寫 leetcode</a>。因為我不是本科系出身，所以確實在解題時很容易遇上困難，不然就是會想很久。剛好看到這個課程就覺得蠻需要培養如何寫程式的思維，而且重點是免費喔！免費喔！免費喔！（很重要要說 3 次）所以這個系列會記載一些對我有幫助的筆記，希望能讓自己更進步一些。</p>
+<span id="more"></span>
 
 <h2 id="會寫程式的人與初學者差別在哪？"><a href="#會寫程式的人與初學者差別在哪？" class="headerlink" title="會寫程式的人與初學者差別在哪？"></a>會寫程式的人與初學者差別在哪？</h2><hr>
 <h3 id="會寫程式的人"><a href="#會寫程式的人" class="headerlink" title="會寫程式的人"></a>會寫程式的人</h3><ol>
@@ -394,7 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#會寫程式的人與初學者差別在哪？"><span class="nav-number">1.</span> <span class="nav-text">會寫程式的人與初學者差別在哪？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#會寫程式的人"><span class="nav-number">1.1.</span> <span class="nav-text">會寫程式的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初學者"><span class="nav-number">1.2.</span> <span class="nav-text">初學者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在解題會有兩種情況"><span class="nav-number">2.</span> <span class="nav-text">在解題會有兩種情況</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#看題目覺得自己解得開"><span class="nav-number">2.1.</span> <span class="nav-text">看題目覺得自己解得開</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看題目就覺得看不懂"><span class="nav-number">2.2.</span> <span class="nav-text">看題目就覺得看不懂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推薦初學者寫程式的作法"><span class="nav-number">3.</span> <span class="nav-text">推薦初學者寫程式的作法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#想一下解法，不寫任何程式碼"><span class="nav-number">3.1.</span> <span class="nav-text">想一下解法，不寫任何程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把解法寫成-pseudo-code"><span class="nav-number">3.2.</span> <span class="nav-text">把解法寫成 pseudo code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把-pseudo-code-翻譯成程式碼"><span class="nav-number">3.3.</span> <span class="nav-text">把 pseudo code 翻譯成程式碼</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%83%E5%AF%AB%E7%A8%8B%E5%BC%8F%E7%9A%84%E4%BA%BA%E8%88%87%E5%88%9D%E5%AD%B8%E8%80%85%E5%B7%AE%E5%88%A5%E5%9C%A8%E5%93%AA%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">會寫程式的人與初學者差別在哪？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%83%E5%AF%AB%E7%A8%8B%E5%BC%8F%E7%9A%84%E4%BA%BA"><span class="nav-number">1.1.</span> <span class="nav-text">會寫程式的人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%AD%B8%E8%80%85"><span class="nav-number">1.2.</span> <span class="nav-text">初學者</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E8%A7%A3%E9%A1%8C%E6%9C%83%E6%9C%89%E5%85%A9%E7%A8%AE%E6%83%85%E6%B3%81"><span class="nav-number">2.</span> <span class="nav-text">在解題會有兩種情況</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E9%A1%8C%E7%9B%AE%E8%A6%BA%E5%BE%97%E8%87%AA%E5%B7%B1%E8%A7%A3%E5%BE%97%E9%96%8B"><span class="nav-number">2.1.</span> <span class="nav-text">看題目覺得自己解得開</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9C%8B%E9%A1%8C%E7%9B%AE%E5%B0%B1%E8%A6%BA%E5%BE%97%E7%9C%8B%E4%B8%8D%E6%87%82"><span class="nav-number">2.2.</span> <span class="nav-text">看題目就覺得看不懂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%96%A6%E5%88%9D%E5%AD%B8%E8%80%85%E5%AF%AB%E7%A8%8B%E5%BC%8F%E7%9A%84%E4%BD%9C%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">推薦初學者寫程式的作法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B3%E4%B8%80%E4%B8%8B%E8%A7%A3%E6%B3%95%EF%BC%8C%E4%B8%8D%E5%AF%AB%E4%BB%BB%E4%BD%95%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.1.</span> <span class="nav-text">想一下解法，不寫任何程式碼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E8%A7%A3%E6%B3%95%E5%AF%AB%E6%88%90-pseudo-code"><span class="nav-number">3.2.</span> <span class="nav-text">把解法寫成 pseudo code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A-pseudo-code-%E7%BF%BB%E8%AD%AF%E6%88%90%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.3.</span> <span class="nav-text">把 pseudo code 翻譯成程式碼</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

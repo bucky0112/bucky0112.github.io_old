@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -256,10 +256,10 @@
 
       
         <p>在公司專案中，有多筆資料是從 <code>actions</code> 的回傳結果再透過 <code>mutations</code> 來更改資料狀態。這時候想要透過 computed 來處理這些資料，但是還要再把資料傳入 components 中再做處理，感覺總是沒那麼即時，如果在 Vuex 裡面也可以做 computed 就好了…咦？還真的有嗎！？太方便了吧！</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>我的資料有複數筆陣列，結構如下示範：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list_one = [<span class="string">'A001'</span>, <span class="string">'A002'</span>, <span class="string">'A003'</span>, <span class="string">'A004'</span>],</span><br><span class="line"><span class="keyword">const</span> list_two = [<span class="string">'B001'</span>, <span class="string">'B002'</span>, <span class="string">'B003'</span>],</span><br><span class="line"><span class="keyword">const</span> list_three = [<span class="string">'C001'</span>, <span class="string">'C002'</span>, <span class="string">'C003'</span>, <span class="string">'C004'</span>, <span class="string">'C005'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> list_one = [<span class="string">&#x27;A001&#x27;</span>, <span class="string">&#x27;A002&#x27;</span>, <span class="string">&#x27;A003&#x27;</span>, <span class="string">&#x27;A004&#x27;</span>],</span><br><span class="line"><span class="keyword">const</span> list_two = [<span class="string">&#x27;B001&#x27;</span>, <span class="string">&#x27;B002&#x27;</span>, <span class="string">&#x27;B003&#x27;</span>],</span><br><span class="line"><span class="keyword">const</span> list_three = [<span class="string">&#x27;C001&#x27;</span>, <span class="string">&#x27;C002&#x27;</span>, <span class="string">&#x27;C003&#x27;</span>, <span class="string">&#x27;C004&#x27;</span>, <span class="string">&#x27;C005&#x27;</span>]</span><br></pre></td></tr></table></figure>
 
 <p>我的需要是將複數筆陣列的資料給合併成一個陣列，然後再去做資料處理。</p>
 <h2 id="Getters-的用法"><a href="#Getters-的用法" class="headerlink" title="Getters 的用法"></a>Getters 的用法</h2><p>如果要把 <code>state</code> 的資料給傳入 component 中再做處理也是一種作法，但是先在 Vuex 中做完，然後再拿到處理好的資料看要再做其他處理，這樣應該會是一個更好的作法。</p>
@@ -278,7 +278,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  combineArray() &#123;</span><br><span class="line">    return this.$store.getters.combineArray;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>如果有多筆來自 Vuex 的資料的話，最方便可以使用 <code>mapGetters</code>，效果也是一樣的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapGetters([<span class="string">"combineArray"</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">&quot;vuex&quot;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapGetters([<span class="string">&quot;combineArray&quot;</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -362,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getters-的用法"><span class="nav-number">2.</span> <span class="nav-text">Getters 的用法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getters-%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">Getters 的用法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/bucky0112.github.io/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/bucky0112.github.io/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/bucky0112.github.io/images/favicon-16x16-next.png">
@@ -37,7 +37,6 @@
 <meta property="article:published_time" content="2020-10-10T13:53:34.000Z">
 <meta property="article:modified_time" content="2020-10-26T15:11:18.404Z">
 <meta property="article:author" content="Bucky Chu">
-<meta property="article:tag" content="mapState">
 <meta property="article:tag" content="vuex">
 <meta property="article:tag" content="state">
 <meta name="twitter:card" content="summary">
@@ -268,7 +267,7 @@
 
       
         <p>在之前的專案中，如果碰到要資料傳遞的部份，例如是父子層關係的話，只要用 <code>props</code> 跟 <code>emit</code> 就可以解決了，而遇到同階層的關係，就用 <code>$eventbus</code> 來處理，不過這個方法只能處理比較簡單的資料，而且在 Vue 3 也不支援了。不怕，總是有技術可以解決問題，所以就從 state 開始來學學 Vuex 吧～</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p><img src="https://i.imgur.com/JY7TkcK.png" alt="image-20201026231043927"></p>
 <h2 id="什麼是-Vuex？"><a href="#什麼是-Vuex？" class="headerlink" title="什麼是 Vuex？"></a>什麼是 Vuex？</h2><p>Vuex 是 Vue 官方開發的一種狀態管理模式，它的設計是把所有元件的狀態集中式管理，放在一個 <strong>store</strong> 裡面。<br>以下是 Vuex 的處理方法：</p>
@@ -278,10 +277,10 @@
 <h2 id="怎麼使用-state？"><a href="#怎麼使用-state？" class="headerlink" title="怎麼使用 state？"></a>怎麼使用 state？</h2><p>由於 State 就跟 Data 差不多概念，只是 State 是一個統一存放在 Vuex 的 Store 中的 Data，要使用的話也蠻簡單的，打開 store/index.js：</p>
 <p><img src="https://i.imgur.com/RqaI0zQ.png" alt="2BE446E7-3B75-4D76-82C6-079E0B65E4DD"></p>
 <p>直接在  state 中建立一筆資料：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  movieTitle: <span class="string">'Joker'</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  movieTitle: <span class="string">&#x27;Joker&#x27;</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>然後在需要存取的頁面中，使用 <code>computed</code> 來拿到 State：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  movieTitle() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.movieTitle;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  <span class="function"><span class="title">movieTitle</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.$store.state.movieTitle;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>要怎麼確定有沒有拿到 state 呢？可以使用 Vue Devtools，如果成功的話就可以看到以下畫面：</p>
 <p><img src="https://i.imgur.com/eBAbVAd.png" alt="F9A26099-07F2-4A62-9A6A-26D55756DC0A"></p>
@@ -290,16 +289,16 @@
 <li>從 Vuex 中 import <code>mapState</code></li>
 <li>使用 <code>computed</code> 調用  <code>mapState</code> 拿到 Vuex 的 State</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">'movieTitle'</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">&#x27;movieTitle&#x27;</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>接著就可以在這個頁面中使用拿到的 State，例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; movieTitle &#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123; movieTitle &#125;&#125;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
 
 <p>如果在 store 中有其他 State 要調用的話，例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  movieTitle: <span class="string">'Joker'</span>,</span><br><span class="line">  movieAge: <span class="string">'PG13'</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">  movieTitle: <span class="string">&#x27;Joker&#x27;</span>,</span><br><span class="line">  movieAge: <span class="string">&#x27;PG13&#x27;</span>,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <p>那麼在 computed 中就可以這樣用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">'movieTitle'</span>, <span class="string">'movieAge'</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">&#x27;movieTitle&#x27;</span>, <span class="string">&#x27;movieAge&#x27;</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>像這樣就可以拿到從 Store 的 State</p>
 <p><img src="https://i.imgur.com/TMdDYi6.png" alt="B34E7F44-3764-4B1A-8982-7CE0D0122152"></p>
@@ -394,7 +393,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什麼是-Vuex？"><span class="nav-number">1.</span> <span class="nav-text">什麼是 Vuex？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎麼使用-state？"><span class="nav-number">2.</span> <span class="nav-text">怎麼使用 state？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-mapState-來輔助存取-state"><span class="nav-number">2.1.</span> <span class="nav-text">使用 mapState 來輔助存取 state</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Vuex%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什麼是 Vuex？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E9%BA%BC%E4%BD%BF%E7%94%A8-state%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">怎麼使用 state？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-mapState-%E4%BE%86%E8%BC%94%E5%8A%A9%E5%AD%98%E5%8F%96-state"><span class="nav-number">2.1.</span> <span class="nav-text">使用 mapState 來輔助存取 state</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
